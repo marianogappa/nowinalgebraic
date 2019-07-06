@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practical Chess Endings: Now in Algebraic!</title>
+    <link rel="stylesheet" href="css/chessboard-0.3.0.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <style>
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,hr {
+        margin:0;
+        padding:0;
+        }
+        table {
+        border-collapse:collapse;
+        border-spacing:0;
+        }
+        fieldset,img {
+        border:0;
+        }
+        address,caption,cite,code,dfn,em,strong,th,var {
+        font-style:normal;
+        font-weight:normal;
+        }
+        ol,ul {
+        list-style:none;
+        }
+        caption,th {
+        text-align:left;
+        }
+        h1,h2,h3,h4,h5,h6 {
+        font-size:100%;
+        font-weight:normal;
+        }
+        q:before,q:after {
+        content:'';
+        }
+        abbr,acronym { border:0;
+        }
+    </style>
+
+    <style>
+        body {
+            font-size: 16px;
+            font-family: 'PT Serif';
+            padding: 0px;
+            margin: 0px;
+        }
+        section {
+            padding-left: 15px;
+        }
+        i {
+            font-weight: normal;
+            color: red;
+        }
+        h1 {
+            font-weight: bolder;
+            font-size: 24px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-weight: bolder;
+            color: #444;
+            font-size: 18px;
+            /* padding-top: 10px; */
+            padding-bottom: 10px;
+        }
+        .examples a {
+            display: inline-block;
+            padding-left: 15px;
+            padding-bottom: 5px;
+        }
+        .line {
+            padding-bottom: 3px;
+            font-size: 12px;
+        }
+        button {
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .play {
+            color: white;
+            font-weight: bolder;
+            background-color: rgb(240, 0, 0);
+            border: 1px solid rgb(200, 0, 0);
+        }
+        .play:hover {
+            background-color: rgb(220, 0, 0);
+            box-shadow: 1px 1px 1px gray;
+        }
+        #previous {
+            margin-right: 10px;
+        }
+        textarea {
+            display: inline-block;
+            height: 200px;
+            width: 380px;
+            padding: 10px;
+            font-size: 13px;
+            font-family: 'PT Serif';
+            border-color: #CCC;
+        }
+        #actionswr, #board, .examples {
+            display: inline-block;
+            vertical-align: top;
+        }
+        #actionswr {
+            padding-left: 15px;
+        }
+        #board {
+            margin-bottom: 15px;
+        }
+        footer {
+            position: fixed; bottom: 0px; width: 100%; height: 50px; background-color: gray; color: white;
+            line-height: 50px;
+            padding-left: 15px;
+        }
+        footer a {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+            color: white;
+            padding-right: 15px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h1>Practical Chess Endings: Now in Algebraic!</h1>
+    <h3>Game <span id="gameNumber">296</span></h3>
+    <div>
+        <div id="board" style="width: 400px"></div>
+        <div id="actionswr">
+            <button id="previous" onclick="javascript:previous()">&lt</button><button id="next" onclick="javascript:next()">&gt</button>
+            <div id="actions"></div>
+        </div>
+    </div>
+    <h3>Switch to game</h3>
+    <button id="switchGame294" onclick="javascript:switchGame(294)">Game 294</button>
+    <button id="switchGame296" onclick="javascript:switchGame(296)">Game 296</button>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/chessboard-0.3.0.min.js"></script>
+<script type="text/javascript" src="ostinato.js"></script>
+<script>
+let board = null
+let currentPosition = -1
+let positions = []
+
+const games = {
+    "294": {
+        initialBoard: "1q3k2/7K/1P1P1p2/R2P4/8/B5p1/8/8 w - - 0 1",
+        actions: "b7!	Kf7\nRa8	Qxb7\nRf8+!	Kxf8+\nd7+	Kf7\nd8=N+!	Ke8+\nNxb7\n"
+    },
+    "296": {
+        initialBoard: "RK6/8/1k6/7R/8/8/pp6/8 w - - 0 1",
+        actions: "Ra5	Kc6\nKc8	Kd6\nKd8	Ke6\nRa6+	Kf7\nRf5+	Kg7\nRg5+	Kf7\nRg6	b1=Q\nRc6\n"
+    }
+}
+let currentGame = "296"
+
+const init = function() {
+    board = ChessBoard('board');
+    board.start()
+    refresh()
+}
+
+const switchGame = (gn) => {
+    currentGame = gn
+    refresh()
+}
+
+const currentBoard = () => (currentPosition == -1) ? games[currentGame].initialBoard : positions[currentPosition]
+
+const next = function() {
+    if (currentPosition < positions.length - 1) {
+      currentPosition += 1
+      board.position(currentBoard())
+    }
+}
+
+const previous = function() {
+    if (currentPosition > -1) {
+      currentPosition -= 1
+      board.position(currentBoard())
+    }
+}
+
+const refresh = () => {
+    var target = document.getElementById('actions')
+    document.getElementById('gameNumber').innerHTML = currentGame
+    var parsedNotation = ostinato.parseNotation(games[currentGame].actions, games[currentGame].initialBoard)
+
+    currentPosition = -1
+    board.position(currentBoard())
+    positions = parsedNotation.boards
+
+    fullAction = 1
+    halfAction = 0
+    currentAction = 0
+    actionsString = ''
+    for (action in parsedNotation.actions) {
+        if (halfAction == 0)
+            actionsString += '<div class="line">' + fullAction + '. '
+
+        halfAction++
+
+        if (parsedNotation.validActionCount >= currentAction + 1)
+            actionsString += '<a href="javascript:currentPosition=' + currentAction +
+                '; javascript:board.position(currentBoard())">' + parsedNotation.actions[currentAction] +
+                '</a> '
+        else
+            actionsString += '<i>' + parsedNotation.actions[currentAction] + '</i> '
+
+        currentAction++
+        if (halfAction == 2) {
+            halfAction = 0
+            fullAction++
+            actionsString += '</div>'
+        }
+    }
+
+    target.innerHTML = actionsString
+}
+
+$(document).ready(init);
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58930438-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
