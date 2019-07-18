@@ -133,7 +133,7 @@
 
 <section>
     <h1>Practical Chess Endings: Now in Algebraic!</h1>
-    <h3>Game <span id="gameNumber">296</span></h3>
+    <h3>Game <span id="gameNumber">1</span></h3>
     <div>
         <div id="board" style="width: 400px"></div>
         <div id="actionswr">
@@ -142,6 +142,56 @@
         </div>
     </div>
     <h3>Switch to game</h3>
+    <button id="switchGame1" onclick="javascript:switchGame(1)">Game 1</button>
+    <button id="switchGame2" onclick="javascript:switchGame(2)">Game 2</button>
+    <button id="switchGame3" onclick="javascript:switchGame(3)">Game 3</button>
+    <button id="switchGame4" onclick="javascript:switchGame(4)">Game 4</button>
+    <button id="switchGame5" onclick="javascript:switchGame(5)">Game 5</button>
+    <button id="switchGame6" onclick="javascript:switchGame(6)">Game 6</button>
+    <button id="switchGame7" onclick="javascript:switchGame(7)">Game 7</button>
+    <button id="switchGame8" onclick="javascript:switchGame(8)">Game 8</button>
+    <button id="switchGame9" onclick="javascript:switchGame(9)">Game 9</button>
+    <button id="switchGame10" onclick="javascript:switchGame(10)">Game 10</button>
+    <button id="switchGame11" onclick="javascript:switchGame(11)">Game 11</button>
+    <button id="switchGame12" onclick="javascript:switchGame(12)">Game 12</button>
+    <button id="switchGame13" onclick="javascript:switchGame(13)">Game 13</button>
+    <button id="switchGame14" onclick="javascript:switchGame(14)">Game 14</button>
+    <button id="switchGame15" onclick="javascript:switchGame(15)">Game 15</button>
+    <button id="switchGame16" onclick="javascript:switchGame(16)">Game 16</button>
+    <button id="switchGame17" onclick="javascript:switchGame(17)">Game 17</button>
+    <button id="switchGame18" onclick="javascript:switchGame(18)">Game 18</button>
+    <button id="switchGame19" onclick="javascript:switchGame(19)">Game 19</button>
+    <button id="switchGame20" onclick="javascript:switchGame(20)">Game 20</button>
+    <button id="switchGame21" onclick="javascript:switchGame(21)">Game 21</button>
+    <button id="switchGame22" onclick="javascript:switchGame(22)">Game 22</button>
+    <button id="switchGame23" onclick="javascript:switchGame(23)">Game 23</button>
+    <button id="switchGame24" onclick="javascript:switchGame(24)">Game 24</button>
+    <button id="switchGame25" onclick="javascript:switchGame(25)">Game 25</button>
+    <button id="switchGame26" onclick="javascript:switchGame(26)">Game 26</button>
+    <button id="switchGame27" onclick="javascript:switchGame(27)">Game 27</button>
+    <button id="switchGame28" onclick="javascript:switchGame(28)">Game 28</button>
+    <button id="switchGame29" onclick="javascript:switchGame(29)">Game 29</button>
+    <button id="switchGame30" onclick="javascript:switchGame(30)">Game 30</button>
+    <button id="switchGame31" onclick="javascript:switchGame(31)">Game 31</button>
+    <button id="switchGame32" onclick="javascript:switchGame(32)">Game 32</button>
+    <button id="switchGame33" onclick="javascript:switchGame(33)">Game 33</button>
+    <button id="switchGame34" onclick="javascript:switchGame(34)">Game 34</button>
+    <button id="switchGame35" onclick="javascript:switchGame(35)">Game 35</button>
+    <button id="switchGame36" onclick="javascript:switchGame(36)">Game 36</button>
+    <button id="switchGame37" onclick="javascript:switchGame(37)">Game 37</button>
+    <button id="switchGame38" onclick="javascript:switchGame(38)">Game 38</button>
+    <button id="switchGame39" onclick="javascript:switchGame(39)">Game 39</button>
+    <button id="switchGame40" onclick="javascript:switchGame(40)">Game 40</button>
+    <button id="switchGame41" onclick="javascript:switchGame(41)">Game 41</button>
+    <button id="switchGame42" onclick="javascript:switchGame(42)">Game 42</button>
+    <button id="switchGame43" onclick="javascript:switchGame(43)">Game 43</button>
+    <button id="switchGame44" onclick="javascript:switchGame(44)">Game 44</button>
+    <button id="switchGame45" onclick="javascript:switchGame(45)">Game 45</button>
+    <button id="switchGame46" onclick="javascript:switchGame(46)">Game 46</button>
+    <button id="switchGame47" onclick="javascript:switchGame(47)">Game 47</button>
+    <button id="switchGame48" onclick="javascript:switchGame(48)">Game 48</button>
+    <button id="switchGame49" onclick="javascript:switchGame(49)">Game 49</button>
+    <button id="switchGame50" onclick="javascript:switchGame(50)">Game 50</button>
     <button id="switchGame294" onclick="javascript:switchGame(294)">Game 294</button>
     <button id="switchGame296" onclick="javascript:switchGame(296)">Game 296</button>
 </section>
@@ -155,24 +205,225 @@ let currentPosition = -1
 let positions = []
 
 const games = {
+    '1': {
+        initialBoard: '8/8/8/8/8/1k5P/8/2K5 w - - 0 1',
+        actions: '1. h4 Kc4 \n2. h5 Kd5 \n3. h6 Ke6 \n4. h7 Kf7 \n5. h8=Q',
+    },
+    '2': {
+        initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
+        actions: '1. Kf5! Ke3 \n2. Ke5! Kd3 \n3. Kd5! Kc3 \n4. Kc5! Kd3 \n5. a4 Kc3 \n6. a5 Kb3 \n7. a6 Ka4 \n8. a7 Ka5 \n9. a8=Q# ',
+    },
+    '3': {
+        initialBoard: '4k3/8/3K4/4P3/8/8/8/8 w - - 0 1',
+        actions: '1. Ke6! Kd8 \n2. Kf7  Kd7 \n3. e6+  Kd8 \n4. e7+  Kd7 \n5. e8=Q+ ',
+    },
+    '4': {
+        initialBoard: '8/5k2/3P4/8/6K1/8/8/8 w - - 0 1',
+        actions: '1. Kf5  Kf8 \n2. Kf6! Ke8 \n3. Ke6  Kd8 \n4. d7 Kc7 \n5. Ke7 ',
+    },
+    '5': {
+        initialBoard: '3k4/8/1P6/8/4K3/8/8/8 w - - 0 1',
+        actions: '1. Kd5  Kd7 \n2. Kc5  Kd8 \n3. Kd6! Kc8 \n4. Kc6  Kb8 \n5. b7 Ka7 \n6. Kc7',
+    },
+    '6': {
+        initialBoard: '6k1/8/7K/8/2P5/8/8/8 w - - 0 1',
+        actions: '1. Kg6! Kf8 \n2. Kf6  Ke8 \n3. Ke6  Kd8 \n4. Kd6  Kc8 \n5. Kc6  Kb8 \n6. Kd7  Kb7 \n7. c5 Kb8 \n8. c6 Ka7 \n9. c7 ',
+    },
+    '7': {
+        initialBoard: '8/7k/5K2/6P1/8/8/8/8 w - - 0 1',
+        actions: '1. Kf7! Kh8 \n2. Kg6! Kg8 \n3. Kh6  Kh8 \n4. g6 Kg8 \n5. g7 Kf7 \n6. Kh7  Ke7 \n7. g8=Q ',
+    },
+    '8': {
+        initialBoard: '8/8/5k2/8/5K2/8/4P3/8 w - - 0 1',
+        actions: '1. Ke4  Ke6 \n2. e3!  Kd6 \n3. Kf5  Ke7 \n4. Ke5  Kd7 \n5. Kf6  Ke8 \n6. Ke6  Kf8 \n7. e4 Ke8 \n8. e5 Kf8 \n9. Kd7  Kf7 \n10. e6+ Kf8 \n11. e7+',
+    },
+    '9': {
+        initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
+        actions: '1. Kf2  Kg6 \n2. Ke3  Kf5 \n3. Kd4! Ke6 \n4. Kc5  Kd7 \n5. Kd5  Ke7 \n6. Kc6  Ke6 \n7. d4 Ke7 \n8. d5 Kd8 \n9. Kd6',
+    },
+    '10': {
+        initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
+        actions: '1. Kb3  Kc5 \n2. Kc3  Kd5 \n3. Kd3  Ke5 \n4. Ke3  Kf5 \n5. Kf3  Kg5 \n6. Kg3  Kf5 \n7. Kh4  Kf6 \n8. Kh5  Kg7 \n9. Kg5  Kf7 \n10. Kh6 Kg8 \n11. Kg6',
+    },
+    '11': {
+        initialBoard: '3k4/8/K7/8/8/8/P7/8 w - - 0 1',
+        actions: '1. Kb7! Kd7 \n2. a4 Kd6 \n3. a5 Kc5 \n4. a6',
+    },
+    '12': {
+        initialBoard: '7k/7P/6P1/8/8/6K1/8/8 w - - 0 1',
+        actions: '1. Kf4      Kg7 \n2. Kf5      Kh8 \n3. Kg5      Kg7 \n4. h8=Q+! Kxh8 \n5. Kf6      Kg8 \n6. g7     Kh7 \n7. Kf7 ',
+    },
+    '13': {
+        initialBoard: '6k1/8/5KP1/6P1/8/8/8/8 w - - 0 1',
+        actions: '1. g7 Kh7 \n2. g8=Q+! Kxg8 \n3. Kg6  Kh8 \n4. Kf7  Kh7 \n5. g6+  Kh8 \n6. g7+',
+    },
+    '14': {
+        initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+        actions: '1. a4!  Kc5 \n2. Kg3  Kb6 \n3. c4 Ka5 \n4. c5 Ka6 \n5. Kf3  Kb7 \n6. a5 Kc6 \n7. a6 Kc7 \n8. Ke4  Kc6 \n9. Ke5  Kc7 \n10. Kd5 Kb8 \n11. c6  Kc7 \n12. a7 ',
+    },
+    '15': {
+        initialBoard: '8/8/5Ppk/8/8/4K3/8/8 w - - 0 1',
+        actions: '1. Kf4  Kh7 \n2. Kg5  Kh8 \n3. Kh6! Kg8 \n4. Kxg6 Kh8 \n5. Kf7  Kh7 \n6. Ke8',
+    },
+    '16': {
+        initialBoard: '8/8/5k2/8/p7/8/1PK5/8 w - - 0 1',
+        actions: '1. Kb1! a3 \n2. b3!   Ke5 \n3. Ka2   Kd5 \n4. Kxa3 Kc6 \n5. Ka4!  Kb6 \n6. Kb4',
+    },
+    '17': {
+        initialBoard: '8/8/2p5/8/8/P4k2/8/2K5 w - - 0 1',
+        actions: '1. a4 Ke4 \n2. a5 Kd5 \n3. a6 Kd6 \n4. a7 Kc7 \n5. a8=Q',
+    },
+    '18': {
+        initialBoard: '8/p4K2/P7/8/8/8/1k6/8 w - - 0 1',
+        actions: '1. Ke6    Kc3 \n2. Kd5!  Kb4 \n3. Kc6    Kc4 \n4. Kb7    Kb5 \n5. Kxa7 Kc6 \n6. Kb8 ',
+    },
+    '19': {
+        initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
+        actions: '1. b5 Ke5 \n2. b6!  Kd6 \n3. Kb5  h4 \n4. Ka6  h3 \n5. b7 Kc7 \n6. Ka7  h2 \n7. b8=Q+',
+    },
+    '20': {
+        initialBoard: '8/8/8/3KP1k1/6p1/8/8/8 w - - 0 1',
+        actions: '1. b5 Ke5 \n2. b6!  Kd6 \n3. Kb5  h4 \n4. Ka6  h3 \n5. b7 Kc7 \n6. Ka7  h2 \n7. b8=Q+ ',
+    },
+    '21': {
+        initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
+        actions: '1. Kg5       b5 \n2. Kf4       Ke2 \n3. Ke4       Kd2 \n4. Kd4       Kc2 \n5. Kc5       Kc3 \n6. h5      b4 \n7. h6      b3 \n8. h7      b2 \n9. h8=Q+ Kc2 \n10. Qh2+   Kc1 \n11. Qf4+    Kc2 \n12. Qc4+    Kd2 \n13. Qb3      Kc1 \n14. Qc3+    Kb1 \n15. Kc4      Ka2 \n16. Qa5+    Kb1 \n17. Kb3      Kc1 \n18. Qe1# ',
+    },
+    '22': {
+        initialBoard: '8/8/5P2/8/6K1/7p/6k1/8 w - - 0 1',
+        actions: '1. f7   h2 \n2. f8=Q h1=Q \n3. Qf3+ Kg1 \n4. Qe3+ Kf1 \n5. Qc1+ Kg2 \n6. Qd2+ Kf1 \n7. Qd1+ Kg2 \n8. Qe2+ Kg1 \n9. Kg3!',
+    },
+    '23': {
+        initialBoard: '8/8/1p6/8/8/6P1/k1K5/8 w - - 0 1',
+        actions: '1. Kc3!      Ka3 \n2. Kc4       Ka4 \n3. g4      b5+ \n4. Kd3!     Ka3 \n5. g5      b4 \n6. g6      b3 \n7. g7      b2 \n8. Kc2!      Ka2 \n9. g8=Q+ Ka1 \n10. Qa8# ',
+    },
+    '24': {
+        initialBoard: '8/6p1/7k/8/1K6/8/1P6/8 w - - 0 1',
+        actions: '1. Kc5! g5 \n2. b4  g4 \n3. Kd4   g3 \n4. Ke3   Kg5 \n5. b5  Kg4 \n6. b6  Kh3 \n7. b7  g2 \n8. Kf2   Kh2 \n9. b8=Q+ ',
+    },
+    '25': {
+        initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
+        actions: '1. Kd6!    Ka3 \n2. Kc5      Ka4 \n3. f4     b5 \n4. f5     b4 \n5. Kc4!     b3 \n6. Kc3!     Ka3 \n7. f6     b2 \n8. f7     b1=Q \n9. f8=Q+ Ka4 \n10. Qa8+  Kb5 \n11. Qb7+ ',
+    },
+    '26': {
+        initialBoard: '8/2p5/6K1/8/8/5k2/P7/8 w - - 0 1',
+        actions: '1. Kf5!     Ke3 \n2. Ke5      c6 \n3. a4     Kd3 \n4. a5     c5 \n5. a6     c4 \n6. a7     c3 \n7. a8=Q   c2 \n8. Qd5+! Ke2 \n9. Qa2!     Kd1 \n10. Kd4     c1=Q \n11. Kd3 ',
+    },
+    '27': {
+        initialBoard: '8/4K1pp/8/8/8/8/k6P/8 w - - 0 1',
+        actions: '1. h4!       h5 \n2. Kf8!     g6 \n3. Ke7!      g5 \n4. hxg5     h4 \n5. g6      h3 \n6. g7      h2 \n7. g8=Q+ Ka3 \n8. Qg2 ',
+    },
+    '28': {
+        initialBoard: '8/6k1/1p6/6KP/P7/8/8/8 w - - 0 1',
+        actions: '1. Kf5    Kh6 \n2. Ke5    Kxh5 \n3. Kd5    Kg6 \n4. Kc6    Kf6 \n5. Kxb6 Ke7 \n6. Kc7 ',
+    },
+    '29': {
+        initialBoard: '8/8/5k2/p7/P3KP2/8/8/8 w - - 0 1',
+        actions: '1. Kd5    Kf5 \n2. Kc5    Kxf4 \n3. Kb5    Ke5 \n4. Kxa5 Kd6 \n5. Kb6    Kd7 \n6. Kb7    Kd8 \n7. a5 ',
+    },
+    '30': {
+        initialBoard: '8/2p1k3/2P5/1P2K3/8/8/8/8 w - - 0 1',
+        actions: '1. Kd5!  Kd8 \n2. Ke6    Kc8 \n3. Ke7    Kb8 \n4. Kd8    Ka7 \n5. Kxc7 Ka8 \n6. Kd8',
+    },
+    '31': {
+        initialBoard: '8/kp6/8/PP6/1K6/8/8/8 w - - 0 1',
+        actions: '1. Kc5  Kb8 \n2. Kb6  Ka8 \n3. Kc7  Ka7 \n4. a6 bxa6 \n5. b6+  Ka8 \n6. b7+  Ka7 \n7. b8=Q# ',
+    },
+    '32': {
+        initialBoard: '8/6k1/3p4/3P1PK1/8/8/8/8 w - - 0 1',
+        actions: '1. f6+    Kf8! \n2. f7!    Kxf7 \n3. Kf5    Ke7 \n4. Kg6    Kd8 \n5. Kf6    Kd7 \n6. Kf7    Kd8 \n7. Ke6    Kc7 \n8. Ke7    Kc8 \n9. Kxd6 Kd8 \n10. Kc6   Kc8 \n11. d6    Kd8 \n12. d7    Ke7 \n13. Kc7',
+    },
+    '33': {
+        initialBoard: '8/3k4/2pP4/2P1K3/8/8/8/8 w - - 0 1',
+        actions: '1. Kf6    Kd8! \n2. d7!    Kxd7 \n3. Kf7!   Kd8 \n4. Ke6    Kc7 \n5. Ke7    Kc8 \n6. Kd6    Kb7 \n7. Kd7    Kb8 \n8. Kxc6 Kc8 \n9. Kd6    Kd8 \n10. c6    Kc8 \n11. c7    Kb7 \n12. Kd7 ',
+    },
+    '34': {
+        initialBoard: '8/1k6/2pK4/8/1P1P4/8/8/8 w - - 0 1',
+        actions: '1. Kd7    Kb6 \n2. Kc8    Ka6 \n3. Kc7    Kb5 \n4. Kb7    Kxb4 \n5. Kxc6 Kc4 \n6. d5',
+    },
+    '35': {
+        initialBoard: '2k5/1p6/1P6/2PK4/8/8/8/8 w - - 0 1',
+        actions: '1. Kd6      Kd8 \n2. Ke6      Kc8 \n3. Ke7      Kb8 \n4. Kd7      Ka8 \n5. c6     bxc6 \n6. Kc7      c5 \n7. b7+      Ka7 \n8. b8=Q+ Ka6 \n9. Qb6#',
+    },
+    '36': {
+        initialBoard: '8/8/kpK5/8/P1P5/8/8/8 w - - 0 1',
+        actions: '1. Kd7!  Kb7 \n2. a5!    bxa5 \n3. c5   a4 \n4. c6+    Kb6 \n5. c7   a3 \n6. c8=Q a2 \n7. Qa8',
+    },
+    '37': {
+        initialBoard: '3/k4/2p5/2K5/1P1P4/8/8/8/8 w - - 0 1',
+        actions: '1. Kb7      Kd7 \n2. Kb8      Kd8 \n3. d6!      cxd6 \n4. b6     d5 \n5. Ka7      d4 \n6. b7     d3 \n7. b8=Q+ Kd7 \n8. Qb5+',
+    },
+    '38': {
+        initialBoard: '4k3/8/4KP2/7p/8/6P1/8/8 w - - 0 1',
+        actions: '1. f7+  Kf8 \n2. Kf6  h4 \n3. g4 h3 \n4. g5 h2 \n5. g6 h1=Q \n6. g7# ',
+    },
+    '39': {
+        initialBoard: '6k1/7p/7K/7P/8/8/6P1/8 w - - 0 1',
+        actions: '1. g3!    Kh8 \n2. g4     Kg8 \n3. g5     Kh8 \n4. g6  hxg6 \n5. hxg6 Kg8 \n6. g7  Kf7 \n7. Kh7 ',
+    },
+    '40': {
+        initialBoard: '8/8/8/5kP1/4p2P/4K3/8/8 w - - 0 1',
+        actions: '1. Kf2  Kg6 \n2. Ke2  Kf5 \n3. Ke3  Ke5 \n4. g6!  Kf6 \n5. h5 Kg7 \n6. Kxe4 ',
+    },
+    '41': {
+        initialBoard: '8/2k5/p1P5/P1K5/8/8/8/8 w - - 0 1',
+        actions: '1. Kd5    Kc8 \n2. Kd4!  Kd8 \n3. Kc4    Kc8 \n4. Kd5    Kc7 \n5. Kc5    Kc8 \n6. Kb6    Kb8 \n7. Kxa6 Kc7 \n8. Kb5    Kc8 \n9. Kb6    Kb8 \n10. c7+   Kc8 \n11. a6    Kd7 \n12. Kb7 ',
+    },
+    '42': {
+        initialBoard: '8/1pk5/8/1K6/1PP5/8/8/8 w - - 0 1',
+        actions: '1. c5   Kc8 \n2. Kb6    Kb8 \n3. c6   Ka8 \n4. Kc7    bxc6 \n5. Kxc6 Ka7 \n6. b5   Kb8 \n7. Kb6    Ka8 \n8. Kc7    Ka7 \n9. b6+ ',
+    },
+    '43': {
+        initialBoard: '8/8/8/8/4k1p1/8/4KPP1/8 w - - 0 1',
+        actions: '1. g3   Kd4 \n2. f3   bxf3+ \n3. Kxf3  Ke5 \n4. Kg4!  Kf6 \n5. Kh5    Kf5 \n6. g4+    Kf6 \n7. Kh6    Kf7 \n8. g5   Kg8 \n9. Kg6',
+    },
+    '44': {
+        initialBoard: '8/8/1kp5/8/K1PP4/8/8/8 w - - 0 1',
+        actions: '1. Kb3    Kc7 \n2. Kc3    Kd6 \n3. Kd3    Kd7 \n4. Ke4    Ke6 \n5. c5   Kf6 \n6. d5!    Ke7 \n7. d6+    Kd7 \n8. Ke5    Kd8 \n9. d7!    Kxd7 \n10. Kf6   Kd8 \n11. Ke6   Kc7 \n12. Ke7   Kc8 \n13. Kd6   Kb7 \n14. Kd7   Kb8 \n15. Kxc6 Kc8 \n16. Kd6   Kd8 \n17. c6    Kc8 \n18. c7    Kb7 \n19. Kd7 ',
+    },
+    '45': {
+        initialBoard: '8/p7/P7/8/8/4k3/4P3/4K3 w - - 0 1',
+        actions: '1. Kf1    Kd4 \n2. Kf2    Kc5 \n3. e4!    Kd4 \n4. Kf3    Ke5 \n5. Ke3    Ke6 \n6. Kd4    Kd6 \n7. e5+    Ke6 \n8. Ke4    Ke7 \n9. Kd5    Kd7 \n10. e6+   Ke7 \n11. Ke5   Ke8 \n12. Kd6   Kd8 \n13. Kc6   Ke7 \n14. Kb7   Kxe6 \n15. Kxa7 Kd7 \n16. Kb7 ',
+    },
+    '46': {
+        initialBoard: '3k4/1K3p2/8/4P3/8/6P1/8/8 w - - 0 1',
+        actions: '1. Kc6    Ke7 \n2. Kd5    Kd7 \n3. Kd4!  Ke7 \n4. Ke3    Kd7 \n5. Kf4    Ke6 \n6. Ke4    Kd7 \n7. Kf5    Ke7 \n8. g4   Ke8! \n9. Kf6!   Kf8 \n10. g5    Ke8 \n11. Kg7! Ke7 \n12. Kg8   Ke8 \n13. e6!   fxe6 \n14. g6    e5 \n15. g7    e4 \n16. Kh7   e3 \n17. g8=Q+ ',
+    },
+    '47': {
+        initialBoard: '8/6p1/8/5P2/5P2/5K2/8/6k1 w - - 0 1',
+        actions: '1. f6!   gxf6 \n2. f5  Kh2 \n3. Kg4   Kg2 \n4. Kh5   Kf3 \n5. Kg6   Kg4 \n6. Kxf6 Kh5 \n7. Kg7',
+    },
+    '48': {
+        initialBoard: '8/6p1/8/K6P/7P/1k6/8/8 w - - 0 1',
+        actions: '1. Kb5    Kc3 \n2. Kc5    Kd3 \n3. Kd5    Ke3 \n4. Ke5    Kf3 \n5. Kf5    Kg3 \n6. h6!    gxh6 \n7. h5   Kh4 \n8. Kg6    Kg4 \n9. Kxh6 Kf5 \n10. Kg7 ',
+    },
+    '49': {
+        initialBoard: '8/6p1/8/4K3/7P/4k2P/8/8 w - - 0 1',
+        actions: '1. Ke6!  Kf4\n2. Kf7   Kg3\n3. h5  Kh4 \n4. Kg6! Kxh3 \n5. Kxg7 ',
+    },
+    '50': {
+        initialBoard: '5k2/5p2/8/4P3/2K1P3/8/8/8 w - - 0 1',
+        actions: '1. e6!   fxe6 \n2. e5!   Ke7 \n3. Kc5   Kd7 \n4. Kb6   Kd8 \n5. Kc6   Ke7 \n6. Kc7   Ke8 \n7. Kd6   Kf7 \n8. Kd7   Kf8 \n9. Kxe6 Ke8 \n10. Kf6  Kf8 \n11. e6   Ke8 \n12. e7 ',
+    },
     "294": {
         initialBoard: "1q3k2/7K/1P1P1p2/R2P4/8/B5p1/8/8 w - - 0 1",
-        actions: "b7!	Kf7\nRa8	Qxb7\nRf8+!	Kxf8+\nd7+	Kf7\nd8=N+!	Ke8+\nNxb7\n"
+        actions: "b7!	Kf7\nRa8	Qxb7\nRf8+!	Kxf8+\nd7+	Kf7\nd8=N+!	Ke8+\nNxb7"
     },
     "296": {
         initialBoard: "RK6/8/1k6/7R/8/8/pp6/8 w - - 0 1",
-        actions: "Ra5	Kc6\nKc8	Kd6\nKd8	Ke6\nRa6+	Kf7\nRf5+	Kg7\nRg5+	Kf7\nRg6	b1=Q\nRc6\n"
+        actions: "Ra5	Kc6\nKc8	Kd6\nKd8	Ke6\nRa6+	Kf7\nRf5+	Kg7\nRg5+	Kf7\nRg6	b1=Q\nRc6"
     }
 }
-let currentGame = "296"
+let currentGame = "2"
 
 const init = function() {
     board = ChessBoard('board');
     board.start()
-    refresh()
+    switchGame(currentGame)
 }
 
 const switchGame = (gn) => {
+    currentPosition = -1
     currentGame = gn
     refresh()
 }
@@ -182,24 +433,25 @@ const currentBoard = () => (currentPosition == -1) ? games[currentGame].initialB
 const next = function() {
     if (currentPosition < positions.length - 1) {
       currentPosition += 1
-      board.position(currentBoard())
+      refresh()
     }
 }
 
 const previous = function() {
     if (currentPosition > -1) {
       currentPosition -= 1
-      board.position(currentBoard())
+      refresh()
     }
 }
 
 const refresh = () => {
     var target = document.getElementById('actions')
     document.getElementById('gameNumber').innerHTML = currentGame
+
     var parsedNotation = ostinato.parseNotation(games[currentGame].actions, games[currentGame].initialBoard)
 
-    currentPosition = -1
-    board.position(currentBoard())
+    console.log(currentBoard())
+    board.position(currentBoard().split(' ')[0])
     positions = parsedNotation.boards
 
     fullAction = 1
@@ -212,12 +464,17 @@ const refresh = () => {
 
         halfAction++
 
-        if (parsedNotation.validActionCount >= currentAction + 1)
-            actionsString += '<a href="javascript:currentPosition=' + currentAction +
+        if (parsedNotation.validActionCount >= currentAction + 1) {
+            // if (currentAction == currentPosition+1) {
+            //     actionsString += `<b>${parsedNotation.actions[currentAction]}</b> `
+            // } else {
+                actionsString += '<a href="javascript:currentPosition=' + currentAction +
                 '; javascript:board.position(currentBoard())">' + parsedNotation.actions[currentAction] +
                 '</a> '
-        else
+            // }
+        } else {
             actionsString += '<i>' + parsedNotation.actions[currentAction] + '</i> '
+        }
 
         currentAction++
         if (halfAction == 2) {
