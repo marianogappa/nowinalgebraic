@@ -73,12 +73,11 @@
         }
         .line {
             padding-bottom: 3px;
-            font-size: 12px;
+            font-size: 14px;
         }
-        button {
-            padding: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
+        .currentMove {
+            color: black !important;
+            font-weight: bolder;
         }
         .play {
             color: white;
@@ -136,7 +135,19 @@
         }
         #previousGame { margin-right: 10px; }
         #nextGame { margin-left: 10px; }
-
+        .move { color:blue }
+        .button {
+            padding: 5px 10px 5px 10px;
+            background-color: #CCC;
+            text-decoration: none;
+            border: 1px solid #666;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+        .button:active {
+            background-color: #AAA;
+        }
+        #actions { margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -144,21 +155,21 @@
 <section>
     <h1>Practical Chess Endings: Now in Algebraic!</h1>
     <h3>
-        <button id="previousGame" onclick="javascript:previousGame()">&lt</button>
+        <a class="button" id="previousGame" onclick="previousGame()">&lt</a>
         Game <span id="gameNumber">2</span>
-        <button id="nextGame" onclick="javascript:nextGame()">&gt</button></h3>
+        <a class="button" id="nextGame" onclick="nextGame()">&gt</a></h3>
     <div>
         <div id="board" style="width: 400px"></div>
         <div id="actionswr">
-            <button id="previous" onclick="javascript:previous()">&lt</button><button id="next" onclick="javascript:next()">&gt</button>
+            <a class="button" id="previous" onclick="previous()">&lt</a><a class="button" id="next" onclick="next()">&gt</a>
             <div id="actions"></div>
         </div>
     </div>
-    <h3>Switch to game</h3>
-    <form onsubmit="javascript:return false;">
+    <!-- <h3>Switch to game</h3>
+    <form onsubmit="return false;">
         <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="2" maxlength="3" />
-        <button id="gameNumberInputButton" onclick="javascript:updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</button>
-    </form>
+        <button id="gameNumberInputButton" onclick="updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</button>
+    </form> -->
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -1417,7 +1428,6 @@ const refresh = () => {
 
     var parsedNotation = ostinato.parseNotation(games[currentGame].actions, games[currentGame].initialBoard)
 
-    console.log(currentBoard())
     board.position(currentBoard().split(' ')[0])
     positions = parsedNotation.boards
 
@@ -1435,8 +1445,9 @@ const refresh = () => {
             // if (currentAction == currentPosition+1) {
             //     actionsString += `<b>${parsedNotation.actions[currentAction]}</b> `
             // } else {
-                actionsString += '<a href="javascript:currentPosition=' + currentAction +
-                '; javascript:board.position(currentBoard())">' + parsedNotation.actions[currentAction] +
+                actionsString += '<a class="move' + (currentPosition == currentAction ? ' currentMove' : '') + 
+                '" onclick="currentPosition=' + currentAction +
+                '; board.position(currentBoard())">' + parsedNotation.actions[currentAction] +
                 '</a> '
             // }
         } else {
