@@ -143,11 +143,13 @@
             border: 1px solid #666;
             display: inline-block;
             margin-bottom: 3px;
+            color: black;
         }
         .button:active {
             background-color: #AAA;
         }
         #actions { margin-top: 10px; }
+        #actions a { cursor: pointer; }
     </style>
 </head>
 <body>
@@ -155,13 +157,13 @@
 <section>
     <h1>Practical Chess Endings: Now in Algebraic!</h1>
     <h3>
-        <a class="button" id="previousGame" onclick="previousGame()">&lt</a>
+        <a class="button" id="previousGame" href="javascript:previousGame()">&lt</a>
         Game <span id="gameNumber">2</span>
-        <a class="button" id="nextGame" onclick="nextGame()">&gt</a></h3>
+        <a class="button" id="nextGame" href="javascript:nextGame()">&gt</a></h3>
     <div>
         <div id="board" style="width: 400px"></div>
         <div id="actionswr">
-            <a class="button" id="previous" onclick="previous()">&lt</a><a class="button" id="next" onclick="next()">&gt</a>
+            <a class="button" id="previous" href="javascript:previous()">&lt</a><a class="button" id="next" href="javascript:next()">&gt</a>
             <div id="actions"></div>
         </div>
     </div>
@@ -1384,7 +1386,7 @@ const games = {
 }
 let currentGame = "2"
 
-const init = function() {
+const init = () => {
     board = ChessBoard('board');
     board.start()
     switchGame(currentGame)
@@ -1408,14 +1410,14 @@ const updateCurrentGame = (cg) => {
 
 const currentBoard = () => (currentPosition == -1) ? games[currentGame].initialBoard : positions[currentPosition]
 
-const next = function() {
+const next = () => {
     if (currentPosition < positions.length - 1) {
       currentPosition += 1
       refresh()
     }
 }
 
-const previous = function() {
+const previous = () => {
     if (currentPosition > -1) {
       currentPosition -= 1
       refresh()
