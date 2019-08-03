@@ -1448,7 +1448,7 @@ const refresh = () => {
             //     actionsString += `<b>${parsedNotation.actions[currentAction]}</b> `
             // } else {
                 actionsString += '<a class="move' + (currentPosition == currentAction ? ' currentMove' : '') + 
-                '" onclick="currentPosition=' + currentAction +
+                '" href="javascript:currentPosition=' + currentAction +
                 '; board.position(currentBoard())">' + parsedNotation.actions[currentAction] +
                 '</a> '
             // }
