@@ -167,11 +167,9 @@
             <div id="actions"></div>
         </div>
     </div>
-    <!-- <h3>Switch to game</h3>
-    <form onsubmit="return false;">
-        <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="2" maxlength="3" />
-        <button id="gameNumberInputButton" onclick="updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</button>
-    </form> -->
+    <h3>Switch to game</h3>
+    <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="2" maxlength="3" />
+    <a id="gameNumberInputButton" href="javascript:updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</a>
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -261,7 +259,7 @@ const games = {
     },
     '20': {
         initialBoard: '8/8/8/3KP1k1/6p1/8/8/8 w - - 0 1',
-        actions: '1. b5 Ke5 \n2. b6!  Kd6 \n3. Kb5  h4 \n4. Ka6  h3 \n5. b7 Kc7 \n6. Ka7  h2 \n7. b8=Q+ ',
+        actions: '1. e6 Kf6\n2. Kd6 g3\n3. e7 g2\n4. e8=Q g1=Q\n5. Qf8+ Kg5\n6. Qg8+',
     },
     '21': {
         initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
