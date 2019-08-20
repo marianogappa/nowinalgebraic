@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Practical Chess Endings: Now in Algebraic!</title>
+    <title>Irving Chernev's Practical Chess Endings: Now in Algebraic!</title>
     <link rel="stylesheet" href="css/chessboard-0.3.0.min.css" />
     <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
@@ -158,7 +158,7 @@
 <body>
 
 <section>
-    <h1>Practical Chess Endings: Now in Algebraic!</h1>
+    <h1>Irving Chernev's Practical Chess Endings: Now in Algebraic!</h1>
     <h3>
         <a class="button" id="previousGame" href="javascript:previousGame()">&lt</a>
         Game <span id="gameNumber">2</span>
@@ -171,7 +171,7 @@
         </div>
     </div>
     <h3>Switch to game</h3>
-    <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="2" maxlength="3" />
+    <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="1" maxlength="3" />
     <a id="gameNumberInputButton" href="javascript:updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</a>
 </section>
 
@@ -633,7 +633,7 @@ const games = {
         actions: '1. Na5  Ba8 \n2. Kc8! Kd6 \n3. Kb8  Kd7 \n4. Nb7  Kc6 \n5. Kxa8 Kc7 \n6. Nd6! Kxd6 \n7. Kb7'
     },
     '113': {
-        initialBoard: '8/3PK3/8/B1k5/5b2/8/8/8 w - - 0 1',
+        initialBoard: '8/3PK3/8/N1k5/5b2/8/8/8 w - - 0 1',
         actions: '1. Nb7+ Kb4 \n2. Nd6  Be3 \n3. Nc8  Bf4 \n4. Nb6! Kc5 \n5. Nd5! '
     },
     '114': {
@@ -790,7 +790,7 @@ const games = {
     },
     '152': {
         initialBoard: '5k2/8/6PK/8/8/2b3B1/8/8 w - - 0 1',
-        actions: '1. Kh7! Bb2 \n2. Bf4  Bd4 \n3. Bh6+ Ke8 \n4. Bg7  Bc5 \n5. Be5  Bf8 \n6. Bd6! '
+        actions: '1. Kh7! Bb2 \n2. Bf4  Bd4 \n3. Bh6+ Ke8 \n4. Bg7  Bc5 \n5. Be5  Bf8 \n6. Bd6! Bxd6 \n7. g7'
     },
     '153': {
         initialBoard: '8/8/6K1/4B2P/6k1/4b3/8/8 w - - 0 1',
@@ -809,7 +809,7 @@ const games = {
         actions: '1. g5+  Ke7 \n2. g6 Ke8 \n3. Bd7+ Kxd7 \n4. g7 '
     },
     '157': {
-        initialBoard: '1B5/8/7P/4p3/3b3k/8/8/2K5 w - - 0 1',
+        initialBoard: '1B6/8/7P/4p3/3b3k/8/8/2K5 w - - 0 1',
         actions: '1. Ba7! Ba1 \n2. Kb1  Bc3 \n3. Kc2  Ba1 \n4. Bd4! Bxd4 \n5. Kd3  Ba1 \n6. Ke4 '
     },
     '158': {
@@ -821,7 +821,7 @@ const games = {
         actions: '1. e5 Bb7 \n2. e6 Bc8 \n3. e7 Bd7 \n4. Bh3! Be8 \n5. Kf8  Bh5 \n6. Bg4  Bg6 \n7. Bf5+ Bxf5 \n8. e8=Q '
     },
     '160': {
-        initialBoard: '6K1/8/p4K2/2P5/6p1/1b6/8/5B2 w - - 0 1',
+        initialBoard: '6k1/8/p4K2/2P5/6p1/1b6/8/5B2 w - - 0 1',
         actions: '1. c6 Ba4 \n2. c7 Bd7 \n3. Ke7  Bc8 \n4. Kd8  Bf5 \n5. Bd3  Be6 \n6. Bc4  Kf7 \n7. c8=Q'
     },
     '161': {
@@ -846,7 +846,7 @@ const games = {
     },
     '166': {
         initialBoard: '8/3b1K1B/6Pk/8/8/8/7P/8 w - - 0 1',
-        actions: '1. Kg8! Be6+ \n2. Kh8  Bf5 \n3. g7!  Bxh7'
+        actions: '1. Kg8! Be6+ \n2. Kh8  Bf5 \n3. g7!  Bxh7 \n4. h3! Kg6 \n5. h4 Kh6 \n6. h5'
     },
     '167': {
         initialBoard: '5k2/8/5K2/6P1/5P2/1bB5/8/8 w - - 0 1',
@@ -870,7 +870,7 @@ const games = {
     },
     '172': {
         initialBoard: '4k3/4P3/8/4Pp2/7K/8/4B2n/8 w - - 0 1',
-        actions: '1. Kg5  Ng4 \n2. Kxf5 Nxe5 \n3. Ke6!'
+        actions: '1. Kg5  Ng4 \n2. Kxf5 Nxe5 \n3. Ke6! Nd7 \n4. Bh5#'
     },
     '173': {
         initialBoard: '4b2k/7p/1p6/6K1/2P1B1P1/8/8/8 w - - 0 1',
@@ -933,7 +933,7 @@ const games = {
         actions: '1. Rf8+ Kg6 \n2. Rf6+ Kh5 \n3. Ke6  g4 \n4. Kf5  g3 \n5. Rg6  Kh4 \n6. Rh6# '
     },
     '188': {
-        initialBoard: '2R5/7k/5K2/8/p7/8/1p5/8 w - - 0 1',
+        initialBoard: '2R5/7k/5K2/8/p7/8/1p6/8 w - - 0 1',
         actions: '1. Rc7+ Kg8 \n2. Rg7+ Kh8 \n3. Rb7  a3 \n4. Kg6  b1=Q+\n5. Rxb1 a2\n6. Rb8#      '
     },
     '189': {
@@ -965,7 +965,7 @@ const games = {
         actions: '1. Rg5  h3 \n2. Rg4+ b4+ \n3. Kc4  h2 \n4. Rg3  g1=Q \n5. Ra3+!  bxa3 \n6. b3#'
     },
     '196': {
-        initialBoard: '5Pb1/7b/8/8/k5p1/8/3K4/8 w - - 0 1',
+        initialBoard: '5Rn1/7b/8/8/k5P1/8/3K4/8 w - - 0 1',
         actions: '1. Rf7  Bb1 \n2. g5 Ba2 \n3. Ra7+ Kb3 \n4. Kc1 '
     },
     '197': {
@@ -1081,7 +1081,7 @@ const games = {
         actions: '1. Ke7! Ra8 \n2. Kd7! Rf8 \n3. Rf2! Ra8 \n4. Kc7 Rxa7+ \n5. Kc6 Ka5 \n6. Ra2+ '
     },
     '225': {
-        initialBoard: '2K6/2P2R2/k7/8/8/8/2r2p2/8 w - - 0 1',
+        initialBoard: '2K5/2P2R2/k7/8/8/8/2r2p2/8 w - - 0 1',
         actions: '1. Kb8  Rb2+ \n2. Ka8  Rc2 \n3. Rf6+ Ka5 \n4. Kb8  Rb2+ \n5. Ka7  Rc2 \n6. Rf5+ Ka4 \n7. Kb7  Rb2+ \n8. Ka6  Rc2 \n9. Rf4+ Ka3 \n10. Kb6 Rb2+ \n11. Ka5 Rc2 \n12. Rf3+  Kb2 \n13. Rxf2  Rxf2 \n14. c8=Q '
     },
     '226': {
@@ -1158,7 +1158,7 @@ const games = {
     },
     '244': {
         initialBoard: '8/8/8/4K3/8/8/3Q1p2/6k1 w - - 0 1',
-        actions: '1. Kf4    f1=Q+ \n2. Kg3 '
+        actions: '1. Kf4    f1=Q+ \n2. Kg3 Qf5 \n3. Qg2#'
     },
     '245': {
         initialBoard: '8/8/8/8/6K1/6Q1/2p5/3k4 w - - 0 1',
@@ -1213,7 +1213,7 @@ const games = {
         actions: '1. Qb4  Qh1 \n2. Qa3+ Kb6 \n3. Qb2+ Kc5 \n4. Ka7  Qh7 \n5. Qb6+ Kd5 \n6. Ka6 '
     },
     '258': {
-        initialBoard: '6k1/5Q2/3Pp2K/8/4Q3/8/8/8 w - - 0 1',
+        initialBoard: '6k1/5q2/3Pp2K/8/4Q3/8/8/8 w - - 0 1',
         actions: '1. Qg2+ Kf8 \n2. Qa8+ Qe8 \n3. Qb7  Qd8 \n4. Kg6  Qe8+ \n5. Kf6  Qd8+ \n6. Kxe6 Qe8+ \n7. Qe7+ Qxe7+ \n8. dxe7+  Ke8 \n9. Kf6 '
     },
     '259': {
@@ -1245,7 +1245,7 @@ const games = {
         actions: '1. Qb6+ Kc4 \n2. Qd4+ Kb3 \n3. Qd1+ Ka3 \n4. Qa1+ Kb3 \n5. Nxa5+  Kb4 \n6. Qd4+ Ka3 \n7. Nc4+ Kb3 \n8. Nd2+ Ka3 \n9. Qa1+ Kb4 \n10. Qb2+  Kc5 \n11. Qb6+  Kd5 \n12. Qd6# '
     },
     '266': {
-        initialBoard: 'k7/8/8/5q2/3Q4/k6p/4B3/8 w - - 0 1',
+        initialBoard: 'K7/8/8/5q2/3Q4/k6p/4N3/8 w - - 0 1',
         actions: '1. Qa1+ Kb4 \n2. Qb2+ Ka4 \n3. Nc3+ Ka5 \n4. Qa3+ Kb6 \n5. Qd6+ Ka5 \n6. Kb8!!  h2 \n7. Qa3+ Kb6 \n8. Qa7+ Kc6 \n9. Qc7# '
     },
     '267': {
@@ -1317,7 +1317,7 @@ const games = {
         actions: '1. Rh8+ Kd7 \n2. Rh7+ Kd6! \n3. Nf7+ Kc7 \n4. Ne5+!  Kb6! \n5. Nc4+ Ka6 \n6. Rh6+ Kb7! \n7. Nd6+ Kb8 \n8. Rh8+ Kc7 \n9. Nb5+ '
     },
     '284': {
-        initialBoard: 'R7/8/8/8/4K2p/8/8/3k1P1r w - - 0 1',
+        initialBoard: 'R7/8/8/8/4K2p/8/8/3k1N1r w - - 0 1',
         actions: '1. Ra1+ Ke2 \n2. Ng3+ hxg3 \n3. Ra2+!  Kd1 \n4. Kd3  Ke1 \n5. Ke3  Kf1 \n6. Kf3  Kg1 \n7. Kxg3 Kf1 \n8. Ra1+ '
     },
     '285': {
@@ -1373,7 +1373,7 @@ const games = {
         actions: '1. Ra4+   Kg5 \n2. Rc5+   Kf6 \n3. Ra6+   Ke7 \n4. Rc7+   Kd8 \n5. Rh7  Qg2 \n6. Ra8+ Qxa8 \n7. Rh8+ '
     },
     '298': {
-        initialBoard: '8/4r3/1P5K/8/1p2kr2/8/7R/7R w - - 0 1',
+        initialBoard: '8/4r3/1P5K/8/1p2kr2/8/R7/R7 w - - 0 1',
         actions: '1. Re1+   Kf5 \n2. Rxe7   Kf6 \n3. Rf7+!  Kxf7 \n4. b7   Rf6+ \n5. Kh7  Rb6 \n6. Ra7  Ke6 \n7. Ra6!   Rxa6 \n8. b8=Q '
     },
     '299': {
@@ -1391,6 +1391,7 @@ const init = () => {
     board = ChessBoard('board');
     board.start()
     switchGame(currentGame)
+    window.setTimeout(() => switchGame(1), 200)
 }
 
 const switchGame = (gn) => {
