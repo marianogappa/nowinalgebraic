@@ -1386,6 +1386,7 @@ const games = {
     }
 }
 let currentGame = "2"
+let parsedNotation = null
 
 const init = () => {
     board = ChessBoard('board');
@@ -1397,6 +1398,8 @@ const init = () => {
 const switchGame = (gn) => {
     currentPosition = -1
     currentGame = gn
+    parsedNotation = ostinato.parseNotation(games[currentGame].actions, games[currentGame].initialBoard)
+    positions = parsedNotation.boards
     refresh()
 }
 
@@ -1430,10 +1433,7 @@ const refresh = () => {
     var target = document.getElementById('actions')
     document.getElementById('gameNumber').innerHTML = currentGame
 
-    var parsedNotation = ostinato.parseNotation(games[currentGame].actions, games[currentGame].initialBoard)
-
     board.position(currentBoard().split(' ')[0])
-    positions = parsedNotation.boards
 
     fullAction = 1
     halfAction = 0
