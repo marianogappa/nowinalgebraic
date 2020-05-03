@@ -174,6 +174,7 @@
         .alpha-d2270 { bottom: -23px; right: 19px; }
         .numeric-fc462 { top: 16px; left: -20px; }
         body { margin-left: 10px; } /* To account for the Chess board number's negative margin */
+        p { padding-top: 5px; }
 
     </style>
 </head>
@@ -217,151 +218,439 @@ const games = {
         {
             initialBoard: '8/8/8/8/8/1k5P/8/2K5 w - - 0 1',
             actions: '1. h4 Kc4 \n2. h5 Kd5 \n3. h6 Ke6 \n4. h7 Kf7 \n5. h8=Q',
-        }
+        },
+        { initialBoard: '8/8/8/8/8/1k5P/8/2K5 w - - 0 1',
+actions: '1. h4    Kc4\n2. h5    Kd5\n3. h6    Ke6\n4. h7    Kf7\n5. h8=Q',
+comment: 'White win teaches how to count!'
+}
     ],
     '2': [
         {
             initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
             actions: '1. Kf5! Ke3 \n2. Ke5! Kd3 \n3. Kd5! Kc3 \n4. Kc5! Kd3 \n5. a4 Kc3 \n6. a5 Kb3 \n7. a6 Ka4 \n8. a7 Ka5 \n9. a8=Q# ',
-        }
+        },
+        { initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
+actions: '1. a4     Ke4 \n2. a5   Kd5 \n3. a6    Kc6 \n4. a7    Kb7',
+comment: 'White loses Pawn or Queen for draw.'
+},
+{ initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
+actions: '1. Kf5!    Ke3\n2. a4    Kd4\n3. a5    Kc5\n4. a6    Kb6',
+comment: 'White King’s lost tempo and Pawn draws.'
+},
+{ initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
+actions: '1. Kf5!    Ke3\n2. Ke5!    Kd3\n3. a4    Kc4\n4. a5    Kb5',
+comment: 'and Black draws with cut-in.'
+},
+{ initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
+actions: '1. Kf5!   Ke3\n2. Ke5!  Kd3\n3. Kd5!  Kc3\n4. a4       Kb4',
+comment: 'nails down Pawn and draws.   '
+},
+{ initialBoard: '8/8/8/6K1/8/5k2/P7/8 w - - 0 1',
+actions: '1. Kf5!  Ke3\n2. Ke5!  Kd3\n3. Kd5!  Kc3\n4. Kc5!  Kd3\n5. a4     Kc3\n6. a5     Kb3\n7. a6     Ka4\n8. a7     Ka5',
+comment: 'too late Black, loses   with  9 a8=Q#.'
+}
     ],
     '3': [
         {
             initialBoard: '4k3/8/3K4/4P3/8/8/8/8 w - - 0 1',
             actions: '1. Ke6! Kd8 \n2. Kf7  Kd7 \n3. e6+  Kd8 \n4. e7+  Kd7 \n5. e8=Q+ ',
-        }
+        },
+        { initialBoard: '4k3/8/3K4/4P3/8/8/8/8 w - - 0 1',
+actions: '1. e6    Kd8 \n2. e7+    Ke8 \n3. Ke6',
+comment: 'to protect the Pawn but stalemates Black.'
+},
+{ initialBoard: '4k3/8/3K4/4P3/8/8/8/8 w - - 0 1',
+actions: '1. Ke6! Kf8 \n2. Kd7     Kf7 \n3. e6+     Kf8  \n4. e7+',
+comment: 'White wins.'
+}
     ],
     '4': [
         {
             initialBoard: '8/5k2/3P4/8/6K1/8/8/8 w - - 0 1',
             actions: '1. Kf5  Kf8 \n2. Kf6! Ke8 \n3. Ke6  Kd8 \n4. d7 Kc7 \n5. Ke7 ',
-        }
+        },
+        { initialBoard: '8/5k2/3P4/8/6K1/8/8/8 w - - 0 1',
+actions: '1. Kf5    Kf8\n2. Ke6    Ke8\n3. d7+    Kd8\n4. Kd6',
+comment: 'and Black draws by stalemate.'
+}
     ],
     '5': [
         {
             initialBoard: '3k4/8/1P6/8/4K3/8/8/8 w - - 0 1',
             actions: '1. Kd5  Kd7 \n2. Kc5  Kd8 \n3. Kd6! Kc8 \n4. Kc6  Kb8 \n5. b7 Ka7 \n6. Kc7',
-        }
+        },
+        { initialBoard: '3k4/8/1P6/8/4K3/8/8/8 w - - 0 1',
+actions: '1. Kd5    Kd7\n2. Kc5    Kd8\n3. Kc6    Kc8 \n4. b7+    Kb8\n5. Kb6',
+comment: 'draws.'
+}
     ],
     '6': [
         {
             initialBoard: '6k1/8/7K/8/2P5/8/8/8 w - - 0 1',
             actions: '1. Kg6! Kf8 \n2. Kf6  Ke8 \n3. Ke6  Kd8 \n4. Kd6  Kc8 \n5. Kc6  Kb8 \n6. Kd7  Kb7 \n7. c5 Kb8 \n8. c6 Ka7 \n9. c7 ',
-        }
+        },
+        { initialBoard: '6k1/8/7K/8/2P5/8/8/8 w - - 0 1',
+actions: '1. c5    Kf7\n2. Kg5    Ke6',
+comment: 'Black pinches off King, wins the Pawn and draws.'
+},
+{ initialBoard: '6k1/8/7K/8/2P5/8/8/8 w - - 0 1',
+actions: '1. Kg6!     Kf8\n2. Kf6     Ke8\n3. Ke6     Kd8\n4. Kd6     Kc8\n5. Kc6      Kd8\n6. Kb7     Ke7\n7. c5',
+comment: 'White wins when Pawn  cannot be stopped. '
+}
     ],
     '7': [
         {
             initialBoard: '8/7k/5K2/6P1/8/8/8/8 w - - 0 1',
             actions: '1. Kf7! Kh8 \n2. Kg6! Kg8 \n3. Kh6  Kh8 \n4. g6 Kg8 \n5. g7 Kf7 \n6. Kh7  Ke7 \n7. g8=Q ',
-        }
+        },
+        { initialBoard: '8/7k/5K2/6P1/8/8/8/8 w - - 0 1',
+actions: '1. g6+    Kh8   \n2. Kf7',
+comment: 'stalemates Black.'
+},
+{ initialBoard: '8/7k/5K2/6P1/8/8/8/8 w - - 0 1',
+actions: '1. g6+    Kh8   \n2. g7+    Kg8 \n3. Kg6',
+comment: ' Black is stalemated.'
+}
     ],
     '8': [
         {
             initialBoard: '8/8/5k2/8/5K2/8/4P3/8 w - - 0 1',
             actions: '1. Ke4  Ke6 \n2. e3!  Kd6 \n3. Kf5  Ke7 \n4. Ke5  Kd7 \n5. Kf6  Ke8 \n6. Ke6  Kf8 \n7. e4 Ke8 \n8. e5 Kf8 \n9. Kd7  Kf7 \n10. e6+ Kf8 \n11. e7+',
-        }
+        },
+        { initialBoard: '8/8/5k2/8/5K2/8/4P3/8 w - - 0 1',
+actions: '1. Ke4    Ke6\n2. e3!    Kd6\n3. Kf5    Kd5\n4. e4+    Kd6\n5. Kf6!    Kd7\n6. e5    Ke8\n7. Ke6',
+comment: 'familiar opposition and White wins.'
+},
+{ initialBoard: '8/8/5k2/8/5K2/8/4P3/8 w - - 0 1',
+actions: '1. Ke4    Ke6\n2. e3!    Kd6\n3. Kf5    Ke7\n4. Ke5    Kd7\n5. Kf6    Kd6\n6. e4    Kd7\n7. e5    Ke8\n8. Ke6',
+comment: 'White wins.'
+},
+{ initialBoard: '8/8/5k2/8/5K2/8/4P3/8 w - - 0 1',
+actions: '1. Ke4    Ke6\n2. e3!    Kd6\n3. Kf5    Ke7\n4. Ke5    Kd7\n5. Kf6    Kd6\n6. e4    Kd7\n7. e5    Kd8\n8. Kf7',
+comment: 'White wins.'
+}
     ],
     '9': [
         {
             initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
             actions: '1. Kf2  Kg6 \n2. Ke3  Kf5 \n3. Kd4! Ke6 \n4. Kc5  Kd7 \n5. Kd5  Ke7 \n6. Kc6  Ke6 \n7. d4 Ke7 \n8. d5 Kd8 \n9. Kd6',
-        }
+        },
+        { initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
+actions: '1. Kf2    Kg6\n2.  Ke3    Kf5\n3.  Kd4!    Ke6\n4.  Kc5    Ke5\n5. d4+    Ke6\n6. d5+    Kd7\n7. d6    Kd8\n8. Kc6    Kc8\n9. d7+    Kd8',
+comment: ' and Black draws '
+},
+{ initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
+actions: '1. Kf2    Kg6\n2.  Ke3    Kf5\n3.  Kd4!    Ke6\n4.  Kc5    Ke5\n5. d4+    Ke6\n6. Kc6    Ke7\n7. d5    Ke8\n7. Kd6',
+comment: 'with familiar White  opposition and win.'
+},
+{ initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
+actions: '1. Kf2    Kg6\n2.  Ke3    Kf5\n3.  Kd4!    Ke6\n4.  Kc5    Kd7\n5. Kd5 Ke7\n6. d4    Kd7',
+comment: 'Black has opposition  this time and draws.'
+},
+{ initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
+actions: '1. Kf2     Kg6\n2.  Ke3     Kf5\n3.  Kd4!     Ke6\n4.  Kc5     Kd7\n5. Kd5  Ke7\n6.  Kc6     Kd8\n7. Kd6',
+comment: 'and White wins.'
+},
+{ initialBoard: '8/7k/8/8/8/3P4/8/6K1 w - - 0 1',
+actions: '1. Kf2    Kg6\n2. Ke3    Kf5\n3. Kd4!    Ke6\n4. Kc5    Kd7\n5. Kd5 Ke7\n6. Kc6     Ke6\n7. d4     Ke7\n8. d5    Ke8\n9. Kc7 ',
+comment: 'ends it (for Black). '
+}
     ],
     '10': [
         {
             initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
             actions: '1. Kb3  Kc5 \n2. Kc3  Kd5 \n3. Kd3  Ke5 \n4. Ke3  Kf5 \n5. Kf3  Kg5 \n6. Kg3  Kf5 \n7. Kh4  Kf6 \n8. Kh5  Kg7 \n9. Kg5  Kf7 \n10. Kh6 Kg8 \n11. Kg6',
-        }
+        },
+        { initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
+actions: '1. g4    Kc5 \n2. g5    Kd5\n3. g6    Ke6\n4. g7    Kf7\n5. g8=Q Kxg8',
+comment: 'Pawn is lost  leaving a draw.'
+},
+{ initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
+actions: '1. Kb3    Kc5\n2. Kc3    Kd5\n3. Kd3    Ke5\n4. Ke3    Kf5\n5. Kf3    Kg5\n6. Kg3    Kf5\n7. Kh4    Kf6\n8. Kh5    Kf5\n9. g4+    Kf6\n10. Kh6      Kf7\n11. g5    Kf8\n12. Kh7',
+comment: 'White wins'
+},
+{ initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
+actions: '1. Kb3    Kc5\n2. Kc3    Kd5\n3. Kd3    Ke5\n4. Ke3    Kf5\n5. Kf3    Kg5\n6. Kg3    Kf5\n7. Kh4    Kf6\n8. Kh5    Kf5\n9. g4+    Kf6\n10. Kh6      Kf7\n11. g5    Kf8\n12. Kh7 ',
+comment: 'White wins again.'
+},
+{ initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
+actions: '1. Kb3    Kc5\n2. Kc3    Kd5\n3. Kd3    Ke5\n4. Ke3    Kf5\n5. Kf3    Kg5\n6. Kg3    Kf5\n7. Kh4    Kf6\n8. Kh5    Kf5\n9. g4+    Kf6\n10. Kh6      Kf7\n11. g5    Kg8\n12. Kg6 ',
+comment: 'White wins.'
+},
+{ initialBoard: '8/8/8/1k6/8/K7/6P1/8 w - - 0 1',
+actions: '1. Kb3 Kc5\n2. Kc3 Kd5\n3. Kd3 Ke5\n4. Ke3 Kf5\n5. Kf3 Kg5\n6. Kg3 Kf5\n7. Kh4 Kf6\n8. Kh5 Kg7\n9. Kg5 Kf7\n10. Kh6 Kf6\n11. g4 Kf7\n12. g5',
+comment: 'White wins again.'
+}
     ],
     '11': [
         {
             initialBoard: '3k4/8/K7/8/8/8/P7/8 w - - 0 1',
             actions: '1. Kb7! Kd7 \n2. a4 Kd6 \n3. a5 Kc5 \n4. a6',
-        }
+        },
+        { initialBoard: '3k4/8/K7/8/8/8/P7/8 w - - 0 1',
+actions: '1. Kb6    Kc8\n2. a4    Kb8\n3. a5    Ka8\n4. a6    Kb8\n5. a7+    Ka8\n6. Ka6',
+comment: ' Black is stalemated.'
+},
+{ initialBoard: '3k4/8/K7/8/8/8/P7/8 w - - 0 1',
+actions: '1. Kb6    Kc8\n2. Ka7    Kc7\n3. a4    Kc8\n4. a5    Kc7\n5. a6    Kc8\n6. Ka8    Kc7\n7. a7    Kc8',
+comment: ' White is stalemated.'
+}
     ],
     '12': [
         {
             initialBoard: '7k/7P/6P1/8/8/6K1/8/8 w - - 0 1',
             actions: '1. Kf4      Kg7 \n2. Kf5      Kh8 \n3. Kg5      Kg7 \n4. h8=Q+! Kxh8 \n5. Kf6      Kg8 \n6. g7     Kh7 \n7. Kf7 ',
-        }
+        },
+        { initialBoard: '7k/7P/6P1/8/8/6K1/8/8 w - - 0 1',
+actions: '1.  Kf4    Kg7\n2.  Kf5    Kh8\n3. Ke6    Kg7\n4. Kd7    Kh8',
+comment: 'King must not come any closer -- stalemate.'
+}
     ],
     '13': [
         {
             initialBoard: '6k1/8/5KP1/6P1/8/8/8/8 w - - 0 1',
             actions: '1. g7 Kh7 \n2. g8=Q+! Kxg8 \n3. Kg6  Kh8 \n4. Kf7  Kh7 \n5. g6+  Kh8 \n6. g7+',
-        }
+        },
+        { initialBoard: '6k1/8/5KP1/6P1/8/8/8/8 w - - 0 1',
+actions: '1. g7    Kh7\n2. Kf7',
+comment: 'allows a draw by stalemate.'
+},
+{ initialBoard: '6k1/8/5KP1/6P1/8/8/8/8 w - - 0 1',
+actions: '1. g7    Kh7\n2. g6+    Kg8',
+comment: ' lets the win slip  forever-- stalemate.'
+},
+{ initialBoard: '6k1/8/5KP1/6P1/8/8/8/8 w - - 0 1',
+actions: '1. g7    Kh7\n2. g8=Q+!  Kxg8\n3. Kg6     Kf8\n4. Kh7',
+comment: 'White wins.'
+}
     ],
     '14': [
         {
             initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
             actions: '1. a4!  Kc5 \n2. Kg3  Kb6 \n3. c4 Ka5 \n4. c5 Ka6 \n5. Kf3  Kb7 \n6. a5 Kc6 \n7. a6 Kc7 \n8. Ke4  Kc6 \n9. Ke5  Kc7 \n10. Kd5 Kb8 \n11. c6  Kc7 \n12. a7 ',
-        }
+        },
+        { initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+actions: '1. a4!     Kxc3\n2. a5',
+comment: 'Pawn cannot be  overtaken.'
+},
+{ initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+actions: '1. a4!    Kc5\n2. c4    Kxc4',
+comment: 'Pawn is captured  with a draw.    '
+},
+{ initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+actions: '1. a4!    Kc5\n2. a5    Kb5',
+comment: 'Pawns are captured  with a draw.'
+},
+{ initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+actions: '1. a4!     Kc5\n2. Kg3    Kc4\n3. Kf3',
+comment: 'one Pawn is captured.  but parries the other.   '
+},
+{ initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+actions: '1. a4!     Kc5\n2. Kg3    Kb6\n3. c4    Kc5\n4. a5    ',
+comment: 'and White’s  Pawn Queens.'
+},
+{ initialBoard: '8/8/8/8/2k5/P1P5/7K/8 w - - 0 1',
+actions: '1. a4!     Kc5\n2. Kg3    Kb6\n3. c4    Ka5\n4. c5    Ka6\n5. Kf3    Kb7\n6. a5    Kc6\n7. a6    Kc7\n8. Ke4    Kc6\n9. Ke5    Kc7\n10. Kd5    Kb8\n11. c6    Ka7\n12. c7',
+comment: 'White wins. '
+}
     ],
     '15': [
         {
             initialBoard: '8/8/5Ppk/8/8/4K3/8/8 w - - 0 1',
             actions: '1. Kf4  Kh7 \n2. Kg5  Kh8 \n3. Kh6! Kg8 \n4. Kxg6 Kh8 \n5. Kf7  Kh7 \n6. Ke8',
-        }
+        },
+        { initialBoard: '8/8/5Ppk/8/8/4K3/8/8 w - - 0 1',
+actions: '1. Kf4    g5+\n2. Kf5    g4\n3. Ke6    g3\n4. f7     g2\n5. f8=Q+',
+comment: 'White takes Pawn or Queen and wins.'
+},
+{ initialBoard: '8/8/5Ppk/8/8/4K3/8/8 w - - 0 1',
+actions: '1. Kf4    g5+\n2. Kf5    g4\n3. Ke6    g3\n4. f7    Kg7\n5. Ke7',
+comment: 'White wins.'
+},
+{ initialBoard: '8/8/5Ppk/8/8/4K3/8/8 w - - 0 1',
+actions: '1. Kf4    Kh7\n2. Kg5    Kh8\n3. Kh6!    g5\n4. f7',
+comment: 'followed by  f8=Q#.'
+}
     ],
     '16': [
         {
             initialBoard: '8/8/5k2/8/p7/8/1PK5/8 w - - 0 1',
             actions: '1. Kb1! a3 \n2. b3!   Ke5 \n3. Ka2   Kd5 \n4. Kxa3 Kc6 \n5. Ka4!  Kb6 \n6. Kb4',
-        }
+        },
+        { initialBoard: '8/8/5k2/8/p7/8/1PK5/8 w - - 0 1',
+actions: '1. Kc3    a3! \n2. bxa3    Ke6',
+comment: 'Black draws easily.'
+},
+{ initialBoard: '8/8/5k2/8/p7/8/1PK5/8 w - - 0 1',
+actions: '1. Kc3    a3!\n2. b4    Ke5\n3. Kb3    Kd5\n4. Kxa3    Kc6\n5. Ka4    Kb6\n6. b5    Kb7\n7. Ka5    Ka7\n8. b6+    Kb7\n9. Kb5    Kb8\n10. Kc6    Kc8',
+comment: 'White cannot  avoid the draw.'
+},
+{ initialBoard: '8/8/5k2/8/p7/8/1PK5/8 w - - 0 1',
+actions: '1. Kb1!    Ke5\n2. Ka2    Kd5\n3. Ka3    Kc5\n4. Kxa4     Kb6\n5. Kb4',
+comment: ' White having the  opposition wins. '
+},
+{ initialBoard: '8/8/5k2/8/p7/8/1PK5/8 w - - 0 1',
+actions: '1. Kb1!     a3\n2.   b3!    Ke5\n3.   Ka2    Kd5\n4.   Kxa3    Kc6\n5. Kb4!    Kb6',
+comment: 'Black with the opposition draws.'
+}
     ],
     '17': [
         {
             initialBoard: '8/8/2p5/8/8/P4k2/8/2K5 w - - 0 1',
             actions: '1. a4 Ke4 \n2. a5 Kd5 \n3. a6 Kd6 \n4. a7 Kc7 \n5. a8=Q',
-        }
+        },
+        { initialBoard: '8/8/2p5/8/8/P4k2/8/2K5 w - - 0 1',
+actions: '1. a4    Ke4\n2. a5    Kd5\n3. a6    Kd6\n4. a7    Kc7\n5. a8=Q',
+comment: 'White wins'
+}
     ],
     '18': [
         {
             initialBoard: '8/p4K2/P7/8/8/8/1k6/8 w - - 0 1',
             actions: '1. Ke6    Kc3 \n2. Kd5!  Kb4 \n3. Kc6    Kc4 \n4. Kb7    Kb5 \n5. Kxa7 Kc6 \n6. Kb8 ',
-        }
+        },
+        { initialBoard: '8/p4K2/P7/8/8/8/1k6/8 w - - 0 1',
+actions: '1. Ke7     Kc3\n2. Kd7     Kd4\n3. Kc7     Kc5\n4. Kb7     Kd6\n5. Kxa7     Kc7\n6. Ka8     Kc8',
+comment: 'and Black gets a draw.'
+}
     ],
     '19': [
         {
             initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
             actions: '1. b5 Ke5 \n2. b6!  Kd6 \n3. Kb5  h4 \n4. Ka6  h3 \n5. b7 Kc7 \n6. Ka7  h2 \n7. b8=Q+',
-        }
+        },
+        { initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
+actions: '1. b5    h4\n2. b6    h3\n3. b7    h2\n4. b8=Q+',
+comment: 'with Pawn loss Black loses game.'
+},
+{ initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
+actions: '1. b5    Ke5\n2. Kc5     Ke6\n3. b6     Kd7',
+comment: 'is a draw.'
+},
+{ initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
+actions: '1. b5    Ke5\n2. Kc5     Ke6\n3. Kc6     h4\n4. b6    h3\n5. b7    h2\n6. b8=Q h1=Q',
+comment: 'Position is a draw.'
+},
+{ initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
+actions: '1. b5    Ke5\n2. b6!    Kd6\n3. Kb5    Kd7\n4. Ka6    Kc8\n5. Ka7',
+comment: 'White wins.'
+},
+{ initialBoard: '8/8/8/7p/1PK2k2/8/8/8 w - - 0 1',
+actions: '1. b5    Ke5\n2. b6!    Kd6\n3. Kb5    h4\n4. b7    Kc7\n5. Ka6    Kb8',
+comment: 'and White loses. '
+}
     ],
     '20': [
         {
             initialBoard: '8/8/8/3KP1k1/6p1/8/8/8 w - - 0 1',
             actions: '1. e6 Kf6\n2. Kd6 g3\n3. e7 g2\n4. e8=Q g1=Q\n5. Qf8+ Kg5\n6. Qg8+',
-        }
+        },
+        { initialBoard: '8/8/8/3KP1k1/6p1/8/8/8 w - - 0 1',
+actions: '1. e6    g3\n2. e7    g2\n3. e8=Q g1=Q\n4. Qg8+',
+comment: 'Black’s Queen comes off the board.'
+},
+{ initialBoard: '8/8/8/3KP1k1/6p1/8/8/8 w - - 0 1',
+actions: '1. e6    Kf6\n2. Kd6    g3\n3. e7    Kf7\n4. Kd7',
+comment: 'threat of Queening with check wins for White.'
+}
     ],
     '21': [
         {
             initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
             actions: '1. Kg5       b5 \n2. Kf4       Ke2 \n3. Ke4       Kd2 \n4. Kd4       Kc2 \n5. Kc5       Kc3 \n6. h5      b4 \n7. h6      b3 \n8. h7      b2 \n9. h8=Q+ Kc2 \n10. Qh2+   Kc1 \n11. Qf4+    Kc2 \n12. Qc4+    Kd2 \n13. Qb3      Kc1 \n14. Qc3+    Kb1 \n15. Kc4      Ka2 \n16. Qa5+    Kb1 \n17. Kb3      Kc1 \n18. Qe1# ',
-        }
+        },
+        { initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
+actions: '1. Kg5    b5\n2. h5    b4',
+comment: ' both Pawns Queen  leading to a draw.'
+},
+{ initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
+actions: '1. Kg5    b5\n2. Kf4    b4\n3. Ke4 ',
+comment: 'catching the  Black Pawn.'
+},
+{ initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
+actions: '1. Kg5    b5\n2. Kf4    Ke2\n3. Ke4    b4',
+comment: 'Pawn is caught, White wins.'
+},
+{ initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
+actions: '1. Kg5    b5\n2. Kf4    Ke2\n3. Ke4    Kd2\n4. Kd4    Kc2\n5. h5    b4\n6. h6    b3\n7. h7    b2\n8. h8=Q b1=Q ',
+comment: 'Black draws. '
+},
+{ initialBoard: '8/1p6/7K/8/7P/8/5k2/8 w - - 0 1',
+actions: '1. Kg5    b5\n2. Kf4    Ke2\n3. Ke4    Kd2\n4. Kd4    Kc2\n5. Kc5    Kc3\n6. Kxb5    Kd4\n7. h5    Ke5',
+comment: 'White Pawn’s loss  Is a smashing draw.'
+}
     ],
     '22': [
         {
             initialBoard: '8/8/5P2/8/6K1/7p/6k1/8 w - - 0 1',
             actions: '1. f7   h2 \n2. f8=Q h1=Q \n3. Qf3+ Kg1 \n4. Qe3+ Kf1 \n5. Qc1+ Kg2 \n6. Qd2+ Kf1 \n7. Qd1+ Kg2 \n8. Qe2+ Kg1 \n9. Kg3!',
-        }
+        },
+        { initialBoard: '8/8/5P2/8/6K1/7p/6k1/8 w - - 0 1',
+actions: '1. f7    h2\n2. f8=Q    h1=Q\n3. Qf3+    Kh2',
+comment: 'allows 4 Qg3#.'
+}
     ],
     '23': [
         {
             initialBoard: '8/8/1p6/8/8/6P1/k1K5/8 w - - 0 1',
             actions: '1. Kc3!      Ka3 \n2. Kc4       Ka4 \n3. g4      b5+ \n4. Kd3!     Ka3 \n5. g5      b4 \n6. g6      b3 \n7. g7      b2 \n8. Kc2!      Ka2 \n9. g8=Q+ Ka1 \n10. Qa8# ',
-        }
+        },
+        { initialBoard: '8/8/1p6/8/8/6P1/k1K5/8 w - - 0 1',
+actions: '1. g4    b5\n2. g5    b4\n3. g6    b3+\n4. Kc3    b2\n5. g7    b1=Q\n6. g8=Q+ Ka1',
+comment: '   and a draw.'
+},
+{ initialBoard: '8/8/1p6/8/8/6P1/k1K5/8 w - - 0 1',
+actions: '1. Kc3    b5\n2. Kb4    Kb2\n3. g4',
+comment: 'White wins easily.'
+},
+{ initialBoard: '8/8/1p6/8/8/6P1/k1K5/8 w - - 0 1',
+actions: '1. Kc3    Ka3\n2. Kc4    Ka4\n3. g4    b5+\n4. Kd3!    Ka3\n5. g5    b4\n6. g6    b3\n7. g7    b2\n8. Kc2!    Ka2\n9. g8=Q+ Ka3',
+comment: 'White mates  with 10 Qb3#. '
+}
     ],
     '24': [
         {
             initialBoard: '8/6p1/7k/8/1K6/8/1P6/8 w - - 0 1',
             actions: '1. Kc5! g5 \n2. b4  g4 \n3. Kd4   g3 \n4. Ke3   Kg5 \n5. b5  Kg4 \n6. b6  Kh3 \n7. b7  g2 \n8. Kf2   Kh2 \n9. b8=Q+ ',
-        }
+        },
+        { initialBoard: '8/6p1/7k/8/1K6/8/1P6/8 w - - 0 1',
+actions: '1. Kc5!    Kg6\n2. b4    Kf7\n3. b5    Ke7\n4. Kc6    Kd8\n5. Kb7    g5\n6. b6    g4\n7. Ka7    g3\n8. b7    g2\n9. b8=Q+',
+comment: '   wins for White.'
+},
+{ initialBoard: '8/6p1/7k/8/1K6/8/1P6/8 w - - 0 1',
+actions: '1. Kc5!    g5\n2. b4    g4\n3. Kd4    g3\n4. Ke3    Kg5\n5. Kf3     Kh4\n6. Kg2',
+comment: 'White’s Pawn will Queen and win. '
+},
+{ initialBoard: '8/6p1/7k/8/1K6/8/1P6/8 w - - 0 1',
+actions: '1. Kc5!    g5\n2. b4    g4\n3. Kd4    g3\n4. Ke3    Kg5\n5. Kf3     Kf5\n6. Kxg3     Ke4',
+comment: 'Black captures  Pawn and draws.'
+}
     ],
     '25': [
         {
             initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
             actions: '1. Kd6!    Ka3 \n2. Kc5      Ka4 \n3. f4     b5 \n4. f5     b4 \n5. Kc4!     b3 \n6. Kc3!     Ka3 \n7. f6     b2 \n8. f7     b1=Q \n9. f8=Q+ Ka4 \n10. Qa8+  Kb5 \n11. Qb7+ ',
-        }
+        },
+        { initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
+actions: '1. Kxb7     Kb3\n2. f4    Kc4\n3. f5    Kd5',
+comment: 'both lose Pawns and draw.'
+},
+{ initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
+actions: '1. Kxb7    Kb3 \n2. Kc6    Kc4 \n3. Kd6    Kd4\n4. f4    Ke4',
+comment: 'Black also wins  Pawn for draw. '
+},
+{ initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
+actions: '1. f4    b5 \n2. f5    b4',
+comment: 'both sides Queen  and draw. '
+},
+{ initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
+actions: '1. Kd6!     b5\n2. Kc5     Kb3 \n3. Kxb5     Kc3 \n4. Kc5     Kd3 \n5. Kd5 ',
+comment: 'and the Pawn  is safe.'
+},
+{ initialBoard: '8/1pK5/8/8/8/8/k4P2/8 w - - 0 1',
+actions: '1. Kd6!     Ka3\n2. Kc5     Ka4\n3. f4     b5\n4. f5     b4\n5. f6     b3 \n6. f7     b2\n7. f8=Q     b1=Q \n8. Qa8+     Kb3 \n9. Qb7+ Kc2',
+comment: 'is only a draw.'
+}
     ],
     '26': [
         {
@@ -2145,7 +2434,7 @@ const refresh = () => {
         }
     }
 
-    target.innerHTML = actionsString
+    target.innerHTML = actionsString + `<p>${games[currentGame][currentVariant].comment ? games[currentGame][currentVariant].comment : ''}</p>`
 }
 
 $(document).ready(init);
