@@ -175,7 +175,15 @@
         .numeric-fc462 { top: 16px; left: -20px; }
         body { margin-left: 10px; } /* To account for the Chess board number's negative margin */
         p { padding-top: 5px; }
-
+        .twoColumnGrid { 
+            display: grid;
+            grid-template-columns: 600px 500px;
+            padding-bottom: 20px;
+        }
+        .rightColumn { text-align: justify; }
+        .rightColumn i { color: black; font-style: italic; }
+        .rightColumn p { margin-bottom: 10px; margin-top: 10px; }
+        #actionswr { width: 150px; }
     </style>
 </head>
 <body>
@@ -192,17 +200,23 @@
         <span id="variantDescription">See variants</span>
         <a class="button" id="nextVariant" href="javascript:nextVariant()">&gt</a></h3>
     </div>
-    <div>
-        <div id="board" style="width: 400px"></div>
-        <div id="actionswr">
-            <a class="button" id="previous" href="javascript:previous()">&lt</a><a class="button" id="next" href="javascript:next()">&gt</a>
-            <div id="actions"></div>
+    <div class="twoColumnGrid">
+        <div class="leftColumn">
+            <div>
+                <div id="board" style="width: 400px"></div>
+                <div id="actionswr">
+                    <a class="button" id="previous" href="javascript:previous()">&lt</a><a class="button" id="next" href="javascript:next()">&gt</a>
+                    <div id="actions"></div>
+                </div>
+            </div>
+            <br/>
+            <h3>Switch to game</h3>
+            <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="1" maxlength="3" />
+            <a id="gameNumberInputButton" href="javascript:updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</a>                    
         </div>
-    </div>
-    <br/>
-    <h3>Switch to game</h3>
-    <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="1" maxlength="3" />
-    <a id="gameNumberInputButton" href="javascript:updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</a>
+        <div class="rightColumn">
+
+        </div>
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -4040,6 +4054,391 @@ const games = {
         }
     ]
 }
+
+const texts = {
+'1': `<p>PROMOTING the Pawn will win easily for White. With King and Queen against King, the process of forcing mate is elementary.</p>
+<p>Can the Pawn advance at once, or will it be caught by Black? Let's try moving the Pawn and see:</p>
+<i>1 h4        Kc4</i><br/>
+<i>2 h5        Kd5</i><br/>
+<i>3 h6        Ke6</i><br/>
+<i>4 h7        Kf7</i><br/>
+<i>5 h8=Q</i><br/>
+<p>White wins</p>
+<p>We can thus play out the moves (mentally, of course) or get the answer by a simple count. The latter method tells us that after four moves the Pawn will stand at h7, and Black's pursuing King at his f7—too late to stop the Pawn from Queening</p>`,
+'2': `<p>WHITE cannot win by merely advancing the Pawn. A little preparation is needed.</p>
+<p>A simple count shows that the Pawn can reach a7 in four moves, but that the pursuing King, rushing back along the diagonal, will head it off at b7.</p>
+<p>The play would be: 1 a4, Ke4 2 a5, Kd5 3 a6, Kc6 4 a7, Kb7 and the Pawn is lost. White must try other means:</p>
+<i>        1 Kf5!</i><br/>
+<p>This prevents Black from moving along the diagonal to stop the Pawn, and threatens to win by 2 a4, 3 a5, etc. </p>
+<i>      1 . . .        Ke3</i><br/>
+<p>Black seizes a new diagonal and is ready for this continuation: 2 a4, Kd4 3 a5, Kc5 4 a6 Kb6, and he wins the Pawn.</p>
+<i>        2 Ke5!</i><br/>
+<p>Interferes with that little idea, and once again threatens to win by pushing the Pawn.</p>
+<i>      2 . . .         Kd3</i><br/>
+<p>Now if  3 a4,  Kc4 4 a5, Kb5 and Black draws.</p>
+<i>        3 Kd5!</i><br/>
+<p>Cuts Black off a third time from pursuing the Pawn.</p>
+<i>        3 . . .        Kc3</i><br/>
+<p>This gives White a last chance to start the Pawn prematurely.  If now    4 a4, Kb4 nails the Pawn down.  </p>
+<i>        4 Kc5!</i><br/>
+<p>This is decisive! Black's King is shut out completely.  The continuation (regardless of anything Black does, consider for example Black’s move   4 . . . Kd3) will be:</p>
+<i>    5 a4    Kc3</i><br/>
+<i>    6 a5    Kb3</i><br/>
+<i>    7 a6    Ka4</i><br/>
+<i>    8 a7    Ka5</i><br/>
+<i>    9 a8=Q#</i><br/>
+<p>Or any other Black moves also result in White’s ultimate victory.</p>`,
+'3': `<p>THE key to the win:</p>
+<p>Move the King, not the Pawn!</p>
+<p>The King must clear a way for the Pawn to come through. He does this by taking the opposition: he moves to a face to face position with Black's King, and forces Black to give way.  White can then seize control of e8, the square on which the Pawn promotes to a Queen.</p>
+<p>     Without this preparation, advancing the Pawn does not work. For instance: 1 e6, Kd8 2 Kd7+, Kd8 3Kd6, (to protect the Pawn) and Black draws by stalemate.</p>
+<p>     The proper technique:</p>
+<i>1 Ke6!</i><br/>
+<p>     The Kings face each other, and White having the opposition, forces Black to give way. The King that can compel the other to yield ground either by retreating or stepping aside, is said to have the opposition.</p>
+<p>     This is now for White the ideal position in King and Pawn endings. He wins no matter whose move it is</p>
+<i>1 . . .    Kd8</i><br/>
+<p>Or   1 .. . . Kf8 2 Kd7, Kg7 3 d6+, Kf8  4 e7+, and wins.</p>
+<i>2 Kf7</i><br/>
+<p>From this square, the King not only controls e8 (the square on which the Pawn becomes a Queen) but is also in position to escort the Pawn on its way up.</p>
+<i>    2 . . .         Kd7</i><br/>
+<i>    3 e6+        Kd8</i><br/>
+<i>    4 e7+        Kd7</i><br/>
+<i>    5 e8=Q+</i><br/>
+<p>White wins</p>`,
+'4': `<p>WHITE wins this ending by getting the opposition, and maintaining it.</p>
+<i>1 Kf5</i><br/>
+<p>Strong, but obviously forced, as his Pawn was in danger.</p>
+<p>The Kings face each other with one square between them. White has the opposition, since his opponent must give ground by retreating or stepping to one side.</p>
+<i>1 . . .        Kf8</i><br/>
+<i>2 Kf6!</i><br/>
+<p>Best, since it maintains the opposition. White must resist the temptation to move closer to the Pawn. This would be the consequence: 2 Ke6, Ke8 3 d7+, Kd8 4 Kd6, and Black draws by stalemate. Note in this and similar positions that the Pawn must reach the seventh rank without checking in order to win.</p>
+<i>2 . . .    Ke8</i><br/>
+<i>3 Ke6    Kd8</i><br/>
+<i>4 d7    Kc7</i><br/>
+<i>5 Ke7</i><br/>
+<p>White wins</p>`,
+'5': `<p>ANOTHER song to the same tune. White uses the force of the opposition to help his Pawn reach the Queening square.</p>
+<i>1 Kd5    Kd7</i><br/>
+<i>2 Kc5</i><br/>
+<p>If Black could meet this by 2 . . . Kc7, he would have the opposition. This being impossible, he sets a little trap.</p>
+<i>2 . . .    Kd8</i><br/>
+<p>He hopes that White will play the obvious 3 Kc6 (moving closer to the Pawn) whereupon    3... Kc8 4  b7+, Kb8  5 Kb3 draws.</p>
+<i>3  Kd6!</i><br/>
+<p>This gives White the opposition and assures the win, since the Pawn will now reach the seventh rank without checking.</p>`,
+'6': `<p>WHITE wins this ending by using his King aggressively. The King heads for c6, an ideal King and Pawn position, since it wins with or without the move.</p>
+<i>1 Kg6!</i><br/>
+<p>The only move to win. Moving    1 c5 instead allows 1. . . Kf7 2 Kg5, Ke6 and Black will win the Pawn.</p>
+<p>After the actual move, White has the opposition and by maintaining it makes the winning process child's play.</p>
+<i>    1 . . .        Kf8</i><br/>
+<i>    2 Kf6        Ke8</i><br/>
+<i>    3 Ke6        Kd8</i><br/>
+<i>    4 Kd6</i><br/>
+<p>Black never gets a chance to approach the Pawn.  </p>
+<i>    4 . . .        Kc8 </i><br/>
+<i>    5 Kc6</i><br/>
+<p>An endgame position worth remembering, since White wins no matter whose turn it is to move.</p>
+<i>    5 . . .        Kb8</i><br/>
+<p>If instead 5 ... Kd8 6 Kb7, (seizing control of the Pawn's Queening square) Ke7 7 c5, and the Pawn cannot be stopped. </p>
+<i>    6 Kd7        Kb7</i><br/>
+<i>    7 c5        Kb8</i><br/>
+<i>    8 c6        Ka7</i><br/>
+<i>    9 c7</i><br/>
+<p>White wins</p>`,
+'7': `<p>WHITE plays to get his King in front of the Pawn. The position is then a win, no matter whose move it is.</p>
+<i>1 Kf7!</i><br/>
+<p>There is no win after 1 g6+, Kh8   2 g7+, (2 Kf7 stalemates Black) Kg8 3 Kg6, and Black is stalemated. Notice that the Pawn check at the seventh rank does not win unless White controls the Queening square.</p>
+<i>1 . . .     Kh8</i><br/>
+<i>2 Kg6!    Kg8</i><br/>
+<i>3 Kh6    Kh8</i><br/>
+<i>4 g6    Kg8</i><br/>
+<i>5 g7</i><br/>
+<p>The winning idea. The Pawn reaches the seventh rank without checking.</p>
+<i>5 . . .    Kf7</i><br/>
+<i>6 Kh7</i><br/>
+<p>Seizes control of g8, the Pawn's Queening square.</p>
+<i>6 . . .     Ke7</i><br/>
+<i>7 g8=Q</i><br/>
+<p>White wins</p>`,
+'8': `<p>WHITE plays to get the opposition. This will place his King in a dominating position, force Black to retreat, and clear a way for the Pawn to come through.</p>
+<i>    1 Ke4    Ke6</i><br/>
+<p>White's position is ideal. His King is in front of the Pawn with one square between them. In cases such as this, where he does not have the opposition, he can wrest it from Black by gaining a tempo with a Pawn move.</p>
+<i>2 e3!</i><br/>
+<p>Shows the value of having a square between King and Pawn. The spare move leaves the position of the Kings unchanged—but it is Black's move and he must give way!</p>
+<i>    2 . . .        Kd6</i><br/>
+<i>    3 Kf5        Ke7</i><br/>
+<p>If instead 3 . . . Kd5, the procedure is 4 e4+, Kd6 5 Kf6!, Ke7 6 e5, Ke8 7 Ke6, and White wins.</p>
+<i>4 Ke5</i><br/>
+<p>seizes the opposition. Black must retreat or step aside.</p>
+<i>4 . . .         Kd7</i><br/>
+<i>5 Kf6             Ke8</i><br/>
+<p>Or 5 . . . Kd6 6 e4, Kd7 7 e5, Kd8 (7 . . . Ke8 8 Ke6) 8 Kf7 and White wins.</p>
+<i>6 Ke6</i><br/>
+<p>The simplest, as White has a forced win no matter whose move it is, and no matter whether his Pawn stands on e2, e3, e4 or e5.</p>
+<i>6 . . .        Kf8</i><br/>
+<i>7 e4        Ke8</i><br/>
+<i>8 e5         Kf8</i><br/>
+<i>9 Kd7        Kf7</i><br/>
+<i>10 e6+        Kf8</i><br/>
+<i>11 e7+</i><br/>
+<p>White wins</p>`,
+'9': `<p>TO CLEAR a path for the Pawn, White must maneuver his King to a dominating position in front of the Pawn. He does so interestingly enough by having the King take a walk along the diagonal!</p>
+<i>1 Kf2        Kg6</i><br/>
+<i>2  Ke3        Kf5</i><br/>
+<i>3  Kd4!        Ke6</i><br/>
+<i>4  Kf5        Kd7</i><br/>
+<p>If instead 4 . . . Ke5 5 d4+, Ke6 6 Kf6, (but not 6 d5+, Kd7 7 d6, Kd8 8 Kf6, Kf8 9 d7+, Kd8 and Black draws) Ke7 7 d5, Kd8 8 Kd6 and we have a familiar win.</p>
+<i>5 Kd5     Ke7</i><br/>
+<p>White could now ruin things by 6 d4, Kd7, and Black has the opposition and draws.</p>
+<i>6  Kc6         Ke6</i><br/>
+<p>Or 6 . . . Kd8 7 Kd6 and White wins.</p>
+<i>7 d4         Ke7</i><br/>
+<i>8  d5        Kd8</i><br/>
+<p>On 8 . . . Ke8 9 Kc7 ends it.</p>
+<i>9 Kd6</i><br/>
+<p>White wins</p>`,
+'10': `<p>WITHOUT the aid of the King, who makes a little trip, White's Pawn could never get to the Queening square.</p>
+<i>1 Kb3</i><br/>
+<p>If instead 1 g4 (starting out unescorted) Kc5 2 g5, Kd5 3 g6, Ke6, and the Pawn is lost.(i.e. 4 g7, Kf7 5 g8=Q,  Kxg8!)</p>
+<i>1 . . .              Kc5</i><br/>
+<i>2 Kc3</i><br/>
+<p>Here too, and for the next few moves, advancing the Pawn permits Black to capture it and draw.</p>
+<i>2 . . .             Kd5</i><br/>
+<i>3 Kd3                  Ke5</i><br/>
+<i>4 Ke3                        Kf5</i><br/>
+<i>5 Kf3                     Kg5</i><br/>
+<i>6 Kg3</i><br/>
+<p>Sometimes the way to ensure the Pawn's progress is to get right in its way!</p>
+<i>6  . . .     Kf5</i><br/>
+<i>7 Kh4      Kf6</i><br/>
+<i>8 Kh5    Kg7</i><br/>
+<p>Or 8 . . . Kf5 9 g4+, Kf6 10 Kh6, Kf7 11 g5, Kg8 (11 . . . Kf8 12 Kh7) 12 Kg6 and White wins.</p>
+<i>9 Kg5            Kf7</i><br/>
+<i>10 Kh6               Kg8</i><br/>
+<p>If 10 . . . Kf6 11 g4, Kf7 12 g5 as in the previous note.</p>
+<i>11 Kg6 </i><br/>
+<p>White wins</p>`,
+'11': `<p>IN ORDER to win (and this applies to all endings where the passed Pawn is on the Rook file) White must prevent Black's King from getting in front of the Pawn, since that always ends in a draw. He must also (this may seem strange!) guard against having his own King boxed in!</p>
+<p>These are the drawing possibilities:</p>
+<p>A] 1 Kb6, Kc8 2 a4, Kb8 3 a5, Ka8 4 a6, Kb8 5 a7+, (nothing else is any better) Ka8 6 Ka6 and Black is stalemated.</p>
+<p>B] 1 Kb6, Kc8 2 Ka7, (to prevent 2... Kb8) Kc7 3 a4, Kc8 4 a5, Kc7 5 a6, Kc8 6 Ka8, Kc7 7 a7, Kc8, and White is stalemated.</p>
+<p>The way to win is to use the King aggressively—keep Black out of c8 (and any drawing chances) completely.</p>
+<i>1 Kb7!</i><br/>
+<p>After this move, Black has no play at all.</p>
+<i>1     . . .    Kd7</i><br/>
+<i>2 a4        Kd6</i><br/>
+<i>3 a5        Kc5</i><br/>
+<i>4 a6</i><br/>
+<p>White wins. The Pawn marches gaily up to become a Queen.</p>`,
+'12': `<p>THIS looks like an easy win, since the connected Pawns are never in danger.  If the rear Pawn is captured, the other one advances.  . However there remains the danger of stalemating Black.</p>
+<p>White solves the problem by remembering that one Pawn ahead is enough to win.</p>
+<i>1  Kf 4        Kg7</i><br/>
+<i>2  Kf5        Kh8</i><br/>
+<i>3 Kg5</i><br/>
+<p>If White tries 3 Ke6, then after      3 . . . Kg7  4 Kd7, Kh8, his King must not come any closer.</p>
+<i>3 . . .             Kg7</i><br/>
+<i>4  h8=Q+!            Kxh8</i><br/>
+<i>5  Kf 6            Kg8</i><br/>
+<i>6  g7            Kh7</i><br/>
+<i>7 Kf7</i><br/>
+<p>White wins</p>`,
+'13': `<p>DOUBLED Pawns are often an ad-vantage in the endgame if only for the fact that one of the Pawns may give up his life for the other!</p>
+<i>1 g7    Kh7</i><br/>
+<p>Careful, now! If White moves 2 Kf7 he allows a draw by stalemate, while 2 g6+, Kg8 lets the win slip forever.</p>
+<i>2 g8=Q+!    Kxg8</i><br/>
+<i>3 Kg6</i><br/>
+<p>To get the opposition.</p>
+<i>3 . . .    Kh8</i><br/>
+<p>Or 3 . . . Kf8 4 Kh7 and White wins.</p>
+<i>4 Kf7    Kh7</i><br/>
+<i>5 g6+    Kh8</i><br/>
+<i>6 g7+</i><br/>
+<p>White wins</p>`,
+'14': `<p>THE isolated Pawns look weak and helpless. They are perfectly safe. An attack on either Pawn is parried by advancing the other!</p>
+<i>1 a4!</i><br/>
+<p>Now if Black plays 1 . . . Kxc3 the reply is 2 a5, and the Pawn cannot be overtaken.</p>
+<i>1 ...    Kc5</i><br/>
+<i>2 Kg3</i><br/>
+<p>But not 2 c4, Kxc4 nor 2 a5, Kb5. It is important not to advance the Pawns prematurely.</p>
+<i>2 . . .    Kb6</i><br/>
+<p>Here too against 2 . . . Kc4, the Pawns stay put while the King moves closer by 3 Kf3.</p>
+<i>3 c4    Ka5</i><br/>
+<p>The reply to 3 . . . Kc5 would be 4 a5.</p>
+<i>4 c5    Ka6</i><br/>
+<i>5 Kf3    Kb7</i><br/>
+<i>6 a5    Kc6</i><br/>
+<i>7 a6    Kc7</i><br/>
+<i>8 Ke4    Kc6</i><br/>
+<i>9 Ke5    Kc7</i><br/>
+<i>10 Kd5    Kb8</i><br/>
+<i>11 c6    Kc7</i><br/>
+<p>If 11 . . . Ka7 12 c7 wins.</p>
+<i>12 a7</i><br/>
+<p>White wins</p>`,
+'15': `<p>THERE is a lesson in this ending for those who "take first and think it over later."</p>
+<i>1 Kf4        Kh7</i><br/>
+<p>If instead 1 . . . g5+ 2 Kf5, g4 3 Ke6, g3 4 f7, Kg7 (on 4 . . . g2, White Queens with check) 5 Ke7 and White wins.</p>
+<i>2 Kg5        Kh8</i><br/>
+<i>3 Kh6!</i><br/>
+<p>Taking the opposition wins; taking the Pawn does not.</p>
+<i>3 . . .        Kg8</i><br/>
+<p>Or 3 . . . g5 4 f7 followed by     5 f8=Q#.</p>
+<i>4 Kxg6        Kh8</i><br/>
+<i>5 Kf7        Kh7</i><br/>
+<i>6 Ke8</i><br/>
+<p>White wins</p>`,
+'16': `<i>1 Kb1!</i><br/>
+<p>A CURIOUS way to go after the Pawn! The obvious move 1 Kc3 lets Black escape. For example 1 Kc3, a3! 2 b4 (or 2 bxa3, Ke6, and Black scurrying over to a8 draws easily against a Pawn on the Rook file) Ke5 3 Kb3, Kd5 4 Kxa3, Kc6 5 Ka4, Kb6  6 b5, Kb7 7 Ka5, Ka7 8 b6+, Kb7 9 Kb5, Kb8 10 Kc6, Kc8, and White cannot avoid the draw.</p>
+<p>. . . .     a3</p>
+<p>On 1 . . . Ke5 2 Ka2, Kd5 3 Ka3, Kc5 4 Kxa4, Kb6 5 Kb4, and White having the opposition wins.</p>
+<i>2   b3!        Ke5</i><br/>
+<i>3   Ka2        Kd5</i><br/>
+<i>4   Kxa3        Kc6</i><br/>
+<i>5 Ka4!</i><br/>
+<p>Certainly not 5 Kb4, Kb6, and all White's earlier strategy has been wasted since Black has the opposition and draws.</p>
+<i>5 . . .         Kb6</i><br/>
+<i>6 Kb4</i><br/>
+<p>White wins</p>`,
+'17': `<p>BLACK is double-crossed by his own Pawn! Without the Pawn on the board, Black's King simply heads for the magic square a8, after which no power on earth can force a win.</p>
+<i>1 a4    Ke4</i><br/>
+<i>2 a5    Kd5</i><br/>
+<i>3 a6    Kd6</i><br/>
+<p>Black's own Pawn stands in his way. His King is unable to move to the vital square c6.</p>
+<i>4 a7    Kc7</i><br/>
+<p>Too late.</p>
+<i>5 a8=Q</i><br/>
+<p>White wins</p>`,
+'18': `<p>A STRAIGHT line is not the shortest distance between two points.</p>
+<p>If White moves across the board to capture the Pawn, he wins the Pawn but not the game.</p>
+<p>This is what would happen: 1 Ke7, Kc3 2 Kd7, Kd4 3 Kc7, Kc5 4 Kb7, Kd6 5 Kxa7, Kc7 6 Ka8, Kc8, and Black gets a draw.</p>
+<p>Suppose he meanders down the board and then up again?</p>
+<i>1 Ke6        Kc3</i><br/>
+<i>2 Kd5!</i><br/>
+<p>This is the point. Black is kept out of his d4 square.</p>
+<i>2 . . .        Kb4</i><br/>
+<i>3 Kc6        Kc4</i><br/>
+<i>4 Kb7        Kb5</i><br/>
+<i>5 Kxa7        Kc6</i><br/>
+<i>6 Kb8</i><br/>
+<p>White wins</p>`,
+'19': `<p>WHITE'S King must take a devious route to help his Pawn become a Queen.</p>
+<i>1 b5    Ke5</i><br/>
+<p>There is no hope in 1. . . h4 2 b6, h3 3 b7, h2 4 b8=Q+.</p>
+<i>2 b6!</i><br/>
+<p>If 2 Kc5 (trying to exclude Black's King) Ke6 3 Kc6 (3 b6, Kd7 is a draw) h4 4 b6, h3 5 b7, h2 6 b8=Q, h1=Q and the position is a draw.</p>
+<i>2 . . .        Kd6</i><br/>
+<i>3 Kb5    h4</i><br/>
+<p>If 3. . .Kd7 4 Ka6, Kc8   5 Ka7 wins.</p>
+<i>4 Ka6</i><br/>
+<p>Of course not 4 b7, Kc7 5 Ka6, Kb8 and White loses.</p>
+<i>4 . . .        h3</i><br/>
+<i>5 b7        Kc7</i><br/>
+<i>6 Ka7        h2</i><br/>
+<i>7 b8=Q+</i><br/>
+<p>White wins</p>`,
+'20': `<p>THE race to Queen a Pawn is also a race to see who can check first, and perhaps win the other Queen.</p>
+<i>    1 e6    Kf6</i><br/>
+<p>Black loses quickly after 1 . . . g3 2 e7, g2 3 e8=Q, g1=Q 4 Qg8+, and his Queen comes off the board.</p>
+<i>    2 Kd6        g3</i><br/>
+<i>    3 e7        g2</i><br/>
+<p>If 3 . . . Kf7 4 Kd7, and the threat of Queening with check wins for White.</p>
+<i>4 e8=Q        g1=Q</i><br/>
+<i>5 Qf8+        Kg5</i><br/>
+<i>6 Qg8+</i><br/>
+<p>White wins the Queen and the game</p>`,
+'21': `<p>WHITE'S timing has to be precise in order to Queen his Pawn with a check.</p>
+<i>1 Kg5    b5</i><br/>
+<i>2 Kf4</i><br/>
+<p>To stop Black's Pawn. The alterna-tive 2 h5, b4 leads to both Pawns Queening—and a draw.</p>
+<i>2 . . .    Ke2</i><br/>
+<p>Naturally, if 2 . . . b4 3 Ke4 will catch the Pawn.</p>
+<i>3 Ke4    Kd2</i><br/>
+<p>Here too 3 . . . b4 loses the Pawn.</p>
+<i>4 Kd4    Kc2</i><br/>
+<p>Now if White play 5 h5, Black draws by 5 . . . b4 6 h6, b3 7 h7, b2 8 h8=Q, b1=Q.</p>
+<i>5 Kc5    Kc3</i><br/>
+<p>Ready to meet 6 Kxb5 with 6 . . . Kd4  7 h5, Ke5, winning White's Pawn and draw in return. </p>
+<i>6 h5                b4</i><br/>
+<i>7 h6                b3</i><br/>
+<i>8 h7                b2</i><br/>
+<i>9 h8Q+    Kc2</i><br/>
+<i>10 Qh2+    Kc1</i><br/>
+<i>11 Qf4+    Kc2</i><br/>
+<i>12 Qc4+    Kd2</i><br/>
+<i>13 Qb3    Kc1</i><br/>
+<i>14 Qc3+    Kb1</i><br/>
+<i>15 Kc4    Ka2</i><br/>
+<i>16 Qa5+    Kb1</i><br/>
+<i>17 Kb3    Kc1</i><br/>
+<i>18 Qe1#</i><br/>`,
+'22': `<p>WHERE both sides Queen their Pawns, the one who first gives check has an advantage that is often de-cisive.</p>
+<i>1 f7        h2</i><br/>
+<i>2 f8=Q        h1=Q</i><br/>
+<i>3 Qf3+        Kg1</i><br/>
+<p>Forced, as 3. . . Kh2 allows 4 Qg3#.</p>
+<i>4 Qe3+        Kf1</i><br/>
+<i>5 Qc1+        Kg2</i><br/>
+<i>6 Qd2+        Kf1</i><br/>
+<i>7 Qd1+        Kg2</i><br/>
+<i>8 Qe2+        Kg1</i><br/>
+<i>9 Kg3!</i><br/>
+<p>White wins. Black is curiously helpless to prevent mate.</p>`,
+'23': `<i>1 Kc3</i><br/>
+<p>THE straightforward 1 g4 leads </p>
+<p>to 1 . . . b5 2 g5, b4  3 g6, b3+  4 Kc3, b2 5 g7, b1=Q 6 g8=Q+, Ka1, and a draw.</p>
+<i>1 . . .        Ka3</i><br/>
+<p>To escort the Pawn through. If instead 1 . . . b5 2 Kb4, Kb2 3 g4 wins easily.</p>
+<i>2 Kc4        Ka4</i><br/>
+<i>3 g4        b5+</i><br/>
+<i>4 Kd3!        Ka3</i><br/>
+<p>The King must lose a move as 4 . . . b4  5 Kc2, Ka3  6 Kb1 is hopeless.</p>
+<i>5 g5        b4</i><br/>
+<i>6 g6        b3</i><br/>
+<i>7 g7        b2</i><br/>
+<i>8 Kc2!</i><br/>
+<p>Forcing Black into line for a check.</p>
+<i>8 . . .        Ka2</i><br/>
+<i>9 g8=Q+        Ka1</i><br/>
+<p>Or 9 . . . Ka3 10 Qb3#.</p>
+<i>10 Qa8#</i><br/>`,
+'24': `<i>1 Kc5!</i><br/>
+<p>THE star move to help his own Pawn while making it difficult for Black's to advance.</p>
+<i>1 . . .    g5</i><br/>
+<p>If  1 . . .  Kg6 (to cope with White's Pawn) 2 b4, Kf7  3 b5, Ke7 4 Kc6, Kd8  5 Kb7, g5  6 b6, g4  7 Ka7, g3 8 b7, g2  9 b8=Q+ wins for White.</p>
+<i>2 b4    g4</i><br/>
+<i>3 Kd4    g3</i><br/>
+<i>4 Ke3    Kg5</i><br/>
+<p>To rescue his Pawn, as chasing after White's is useless.</p>
+<i>5 b5</i><br/>
+<p>But not 5 Kf3 (to which Black would not meekly oblige with 5. . . Kh4 6 Kg2 and it's all over) Kf5 6 Kxg3 Ke4 and Black captures the Pawn and draws.</p>
+<i>5 . . .    Kg4</i><br/>
+<i>6 b6    Kh3</i><br/>
+<p>If 6 . . . g2 7 Kf2, Kh3 8 Kg1 wins.</p>
+<i>7 b7            g2</i><br/>
+<i>8 Kf2        Kh2</i><br/>
+<i>9 b8=Q+</i><br/>
+<p>White mates next move with Qg3#.</p>`,
+'25': `<p>THE natural move does not always win, even in the most innocent-looking position.</p>
+<p>Two ideas suggest themselves to White: capturing Black's Pawn or advancing his own. Neither of them works!</p>
+<p>If 1 Kxb7, Kb3 2 Kc6 (2 f4, Kc4 3 f5, Kd5 loses the Pawn) Kc4 3 Kd6, Kd4 4 f4, Ke4 and Black wins the Pawn.</p>
+<p>If 1 f4, b5 2 f5, b4, and both sides Queen with a drawn result.</p>
+<i>1 Kd6!        Ka3</i><br/>
+<p>Or 1 . . . b5 2 Kc5, Kb3 3 Kxb5, Kc3 4 Kc5, Kd3 5 Kd5, and the Pawn is safe.</p>
+<i>2 Kc5        Ka4</i><br/>
+<i>3 f4        b5</i><br/>
+<i>4 f5        b4</i><br/>
+<i>5 Kc4!</i><br/>
+<p>Necessary, as 5 f6, b3 6 f7, b2 7 f8=Q, b1=Q 8 Qa8+, Kb3 9 Qb7+, Kc2 is only a draw.</p>
+<i>5 . . .        b3</i><br/>
+<i>6 Kc3!        Ka3</i><br/>
+<i>7 f6        b2</i><br/>
+<i>8 f7        b1=Q</i><br/>
+<i>9 f8=Q+    Ka4</i><br/>
+<p>If 9. . . Ka2 10 Qa8#.</p>
+<i>10 Qa8+        Kb5</i><br/>
+<i>11 Qb7+</i><br/>
+<p>White wins the Queen and the game</p>`,
+}
+
 let currentGame = "2"
 let currentVariant = 0
 let parsedNotation = null
@@ -4097,6 +4496,7 @@ const refresh = () => {
     document.getElementById('gameNumber').innerHTML = currentGame
     document.getElementById('variantDescription').innerHTML = currentVariant == 0 ? 'See variants' : `Variant ${currentVariant}`
     document.querySelector('.variantSelector').setAttribute('style', games[currentGame].length <= 1 ? 'display:none' : 'display:inline')
+    document.querySelector('.rightColumn').innerHTML = texts[currentGame] ? texts[currentGame] : ''
 
     board.position(currentBoard().split(' ')[0])
 
@@ -4120,7 +4520,7 @@ const refresh = () => {
                 '</a> '
             // }
         } else {
-            actionsString += '<i>' + parsedNotation.actions[currentAction] + '</i> '
+            actionsString += '<i>' + parsedNotation.actions[currentAction] + '</i><br/> '
         }
 
         currentAction++
