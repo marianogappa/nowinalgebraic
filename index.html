@@ -52,6 +52,7 @@
         i {
             font-weight: normal;
             color: red;
+            padding-right: 10px;
         }
         h1 {
             font-weight: bolder;
@@ -183,6 +184,12 @@
         .rightColumn i { color: black; font-style: italic; }
         .rightColumn p { margin-bottom: 10px; margin-top: 10px; }
         #actionswr { width: 150px; }
+        .grandmasterYear { padding-top: 10px;  padding-bottom: 20px; }
+
+        .notationLine{ text-align: center; }
+        .notationMoveNumber { width: 10px; display: inline-block; text-align: left; }
+        .notationBlackMove { width: 80px; display: inline-block; text-align: left; }
+        .notationWhiteMove { width: 80px; display: inline-block; text-align: left; }
     </style>
 </head>
 <body>
@@ -208,7 +215,7 @@
                     <div id="actions"></div>
                 </div>
             </div>
-            <br/>
+            <div class="grandmasterYear"></div>
             <h3>Switch to game</h3>
             <input id="gameNumberInput" size="3" type="number" min="1" max="300" value="1" maxlength="3" />
             <a id="gameNumberInputButton" href="javascript:updateCurrentGame(parseInt(document.querySelector('#gameNumberInput').value))">Switch</a>                    
@@ -285,6 +292,7 @@ const refresh = () => {
     document.getElementById('variantDescription').innerHTML = currentVariant == 0 ? 'See variants' : `Variant ${currentVariant}`
     document.querySelector('.variantSelector').setAttribute('style', games[currentGame].length <= 1 ? 'display:none' : 'display:inline')
     document.querySelector('.rightColumn').innerHTML = texts[currentGame] ? texts[currentGame] : ''
+    document.querySelector('.grandmasterYear').innerHTML = grandmasterYears[currentGame] ? grandmasterYears[currentGame] : ''
 
     board.position(currentBoard().split(' ')[0])
 
