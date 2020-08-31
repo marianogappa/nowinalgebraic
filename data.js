@@ -1,5 +1,21 @@
 const firstColumnExceptions = {
     '2': 34,
+    '44': 60,
+    '50': 25,
+    '58': 80,
+    '65': 26,
+    '66': 47,
+    '69': 61,
+    '132': 46,
+    '169': 52,
+    '170': 80,
+    '174': 38,
+    '211': 54,
+    '214': 21,
+    '240': 42,
+    '242': 68,
+    '251': 28,
+    '257': 34,
     '278': 54,
     '283': 41
 }
@@ -11041,9 +11057,8 @@ const texts = {
                             <span class='notationBlackMove'></span>
                         </div>
     
-    <p>White wins</p>
-    <p>##51</p>
-    <p>THE doubled Pawns find a unique means of keeping the King at bay.</p>
+    <p>White wins</p>`,
+    '51': `<p>THE doubled Pawns find a unique means of keeping the King at bay.</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>1</i>
@@ -11753,7 +11768,82 @@ const texts = {
                         </div>
     
     <p>White wins, since Black cannot stop the Rook Pawn and defend his own Pawn at the same time.</p>`,
-    '59': ``,
+    '59': `
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>1</i>
+                            <span class='notationWhiteMove'>Kf2</span>
+                            <span class='notationBlackMove'>Kh3</span>
+                        </div>
+    
+    <p>IF <i>1</i> ... g3+ <i>2</i> Kg1 (not <i>2</i> Kg2 stalemate) leads to the actual play, while <i>1</i> ... g3xf2 loses by <i>2</i> Kxg2, Kh3 <i>3</i> f5, h4 <i>4</i> f6, Kh2 <i>5</i> f7, h3 <i>6</i> f8=Q, Kg1 <i>7</i> Qh8, h2 <i>8</i> Qa1#.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>Kg1</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Certainly not <i>2</i> f5, Kh2!, and Black will be first to get a Queen.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kh4</span>
+                        </div>
+    
+    <p>He must stop <i>3</i> f5, which wins against other moves.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>Kg2</span>
+                            <span class='notationBlackMove'>g3</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>4</i>
+                            <span class='notationWhiteMove'>Kg1!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>A fearful error would have been <i>4</i> Kh1, when White Queens his Pawn but gets mated! The continuation would be <i>4</i> ... Kh3 <i>5</i> f5, g2+  <i>6</i> Kg1, Kg3 <i>7</i> f6, g4 <i>8</i> f7, h3 <i>9</i> f8=Q, h2#! serving White a blow!</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>4</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>g2</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>5</i>
+                            <span class='notationWhiteMove'>Kh2!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Naturally, <i>5</i> Kxg2 stalemating Black is unthinkable.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>5</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>g1=Q+</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>6</i>
+                            <span class='notationWhiteMove'>Kxg1</span>
+                            <span class='notationBlackMove'>Kg3</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>7</i>
+                            <span class='notationWhiteMove'>f5</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>White wins, as the Pawn cannot be headed off.</p>`,
     '60': `
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>1</i>
@@ -13057,48 +13147,9 @@ const texts = {
                         </div>
     
     <p>Other moves lose instantly:</p>
-    <p>A]</p>
-    <p>2</p>
-    <p>. . Kxc6</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>dxe7</span>
-                            <span class='notationBlackMove'></span>
-                        </div>
-    
-    <p>B]</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>2</i>
-                            <span class='notationWhiteMove'>.</span>
-                            <span class='notationBlackMove'></span>
-                        </div>
-    
-    <p>. . dxc6</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>dxe7</span>
-                            <span class='notationBlackMove'></span>
-                        </div>
-    
-    <p>C]</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>2</i>
-                            <span class='notationWhiteMove'>.</span>
-                            <span class='notationBlackMove'></span>
-                        </div>
-    
-    <p>. . e6</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>cxd7</span>
-                            <span class='notationBlackMove'></span>
-                        </div>
-    
+    <p>A] <i>2</i> ... Kxc6   <i>3</i> dxe7</p>
+    <p>B] <i>2</i> ... dxc6   <i>3</i> dxe7</p>
+    <p>C] <i>2</i> ... e6     <i>3</i> cxd7</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>3</i>
@@ -13126,9 +13177,10 @@ const texts = {
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>6</i>
                             <span class='notationWhiteMove'>f7</span>
-                            <span class='notationBlackMove'>easily Queens next.</span>
+                            <span class='notationBlackMove'></span>
                         </div>
     
+    <p>Easily Queens next.</p>
     <p>White wins</p>`,
     '74': `
                         <div class='notationLine'>
@@ -18698,21 +18750,7 @@ const texts = {
                             <span class='notationBlackMove'>Kb6</span>
                         </div>
     
-    <p>ON A Bishop move instead, say</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Be5, White continues with</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>2</i>
-                            <span class='notationWhiteMove'>Bf6,</span>
-                            <span class='notationBlackMove'>Bh2 3 Bd4, Bg3 4 Ba7, Bf4 5 Bb8, Be3 6 Bh2, Ba7 7 Bg1, and wins.</span>
-                        </div>
-    
+    <p>ON A Bishop move instead, say 1... Be5, White continues with <i>2</i> Bf6, Bh2 <i>3</i> Bd4, Bg3 <i>4</i> Ba7, Bf4 <i>5</i> Bb8, Be3 <i>6</i> Bh2, Ba7 <i>7</i> Bg1, and wins.</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>2</i>
@@ -19468,21 +19506,9 @@ const texts = {
                         </div>
                         `,
     '166': `<p>BEFORE we see how White wins, let us look at some interesting tries:</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>g7,</span>
-                            <span class='notationBlackMove'>Be6+ 2 Kxe6, Kxg7, and Black draws against the Rook Pawn and a Bishop that does not control the Pawn's Queening square.</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>Kf6,</span>
-                            <span class='notationBlackMove'>Be8 2 h4, Bxg6 3 Bxg6, and Black draws by stalemate.</span>
-                        </div>
-    
-    <p>C]    <i>1</i> Bg8, Be6+ <i>2</i> Kxe6, Kxg6, and again Black gets to the corner and draws.</p>
+    <p>A] <i>1</i> g7, Be6+ <i>2</i> Kxe6, Kxg7, and Black draws against the Rook Pawn and a Bishop that does not control the Pawn's Queening square.</p>
+    <p>B] <i>1</i> Kf6, Be8 <i>2</i> h4, Bxg6 <i>3</i> Bxg6, and Black draws by stalemate.</p>
+    <p>C] <i>1</i> Bg8, Be6+ <i>2</i> Kxe6, Kxg6, and again Black gets to the corner and draws.</p>
     <p>The solution is:</p>
     
                         <div class='notationLine'>
@@ -19811,14 +19837,7 @@ const texts = {
                             <span class='notationBlackMove'>Ke6</span>
                         </div>
     
-    <p>If <i>5</i> ... Kf4 <i>6</i> Bd2+, Kg3 <i>7</i> g5, Be5 <i>8</i> g6, Bg7 (otherwise <i>9</i> Bh6 followed by <i>10</i> g7 wins) <i>9</i> Ke3, Kh4 (clearly if <i>9</i> ... Bh6+ <i>10</i> Ke4, Bg7</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>11</i>
-                            <span class='notationWhiteMove'>Bf4+,</span>
-                            <span class='notationBlackMove'>Kg2 12 Be5 is decisive) 10 Ke4, Kh5 11 Kf5, Bd4 12 Bg5, Bg7 13 Bf6, Bf8 14 g7 wins.</span>
-                        </div>
-    
+    <p>If <i>5</i> ... Kf4 <i>6</i> Bd2+, Kg3 <i>7</i> g5, Be5 <i>8</i> g6, Bg7 (otherwise <i>9</i> Bh6 followed by <i>10</i> g7 wins) <i>9</i> Ke3, Kh4 (clearly if <i>9</i> ... Bh6+ <i>10</i> Ke4, Bg7 <i>11</i> Bf4+, Kg2 <i>12</i> Be5 is decisive) <i>10</i> Ke4, Kh5 <i>11</i> Kf5, Bd4 <i>12</i> Bg5, Bg7 <i>13</i> Bf6, Bf8 <i>14</i> g7 wins.</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>6</i>
@@ -20408,17 +20427,17 @@ const texts = {
     
     <p>A quiet move, leading to a remarkable position. The threat is <i>6</i> Bf2, discovering check and attacking the Queen.</p>
     <p>It is Black's turn to move, but despite all the moves at his command, he is helpless. The proof:</p>
-    <p>A] <i>5</i> ... Ke6    <i>6</i> Qe8+ win-ning the Queen.</p>
-    <p>B] 5... Ke4     <i>6</i> Qe8+ win-ning the Queen.</p>
-    <p>C] <i>5</i> ...    Qe6    <i>6</i> Qb3+ win-ning the Queen.  </p>
-    <p>D] <i>5</i> ...    Qe4    <i>6</i> Qb7+ win-ning the Queen.</p>
-    <p>E] <i>5</i> ...    Qh4+ <i>6</i> Be7+ win-ning the Queen.  </p>
-    <p>F] <i>5</i> ...    Qg3 <i>6</i> Bf2+  win-ning the Queen.  </p>
-    <p>G] 5...    Qc3 <i>6</i> Bb4+  win-ning the Queen.  </p>
-    <p>H] <i>5</i> ...    Qd2 <i>6</i> Qd7+  win-ning the Queen.  </p>
-    <p>I] <i>5</i> ...    Qh1 <i>6</i> Qb7+  win-ning the Queen.  </p>
-    <p>J] <i>5</i> ...    Qd1 <i>6</i> Qd7+  win-ning the Queen.  </p>
-    <p>K] <i>5</i> ...    Qc1 <i>6</i> Be3+ win-ning the Queen.  </p>
+    <p>A] <i>5</i> ... Ke6    <i>6</i> Qe8+ winning the Queen.</p>
+    <p>B] 5... Ke4     <i>6</i> Qe8+ winning the Queen.</p>
+    <p>C] <i>5</i> ...    Qe6    <i>6</i> Qb3+ winning the Queen.  </p>
+    <p>D] <i>5</i> ...    Qe4    <i>6</i> Qb7+ winning the Queen.</p>
+    <p>E] <i>5</i> ...    Qh4+ <i>6</i> Be7+ winning the Queen.  </p>
+    <p>F] <i>5</i> ...    Qg3 <i>6</i> Bf2+  winning the Queen.  </p>
+    <p>G] 5...    Qc3 <i>6</i> Bb4+  winning the Queen.  </p>
+    <p>H] <i>5</i> ...    Qd2 <i>6</i> Qd7+  winning the Queen.  </p>
+    <p>I] <i>5</i> ...    Qh1 <i>6</i> Qb7+  winning the Queen.  </p>
+    <p>J] <i>5</i> ...    Qd1 <i>6</i> Qd7+  winning the Queen.  </p>
+    <p>K] <i>5</i> ...    Qc1 <i>6</i> Be3+ winning the Queen.  </p>
     <p>L] <i>5</i> ...    Qa1 <i>6</i> Bd4+ Kxd4 7. Qe5+  sweet skewer of the Queen.</p>
     <p>White wins.</p>`,
     '175': `<p>WHITE has two pretty winning possibilities, based on his opponent's choice of defense.</p>
@@ -24774,20 +24793,8 @@ const texts = {
                         </div>
     
     <p>Other King moves lead to this:</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Kc8 4 g8=Q+, Rxg8 5 Ra8+, and White wins the Rook.</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Kb7 4 c8=Q+, Kxc8 5 g8=Q+, Rxg8 6 Ra8+, and White wins the Rook.</span>
-                        </div>
-    
+    <p>A] <i>3</i> ... Kc8 <i>4</i> g8=Q+, Rxg8 <i>5</i> Ra8+, and White wins the Rook.</p>
+    <p>B] <i>3</i> ... Kb7 <i>4</i> c8=Q+, Kxc8 <i>5</i> g8=Q+, Rxg8 <i>6</i> Ra8+, and White wins the Rook.</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>4</i>
@@ -25863,7 +25870,7 @@ const texts = {
                             <span class='notationBlackMove'>Ka7</span>
                         </div>
     
-    <p>Again forced, the reply to <i>2</i> ...     Rb8 being <i>3</i> Qal#.</p>
+    <p>Again forced, the reply to <i>2</i> ...     Rb8 being <i>3</i> Qa1#.</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>3</i>
@@ -25874,17 +25881,10 @@ const texts = {
     <p>Now White has the desired position, with Black to move.</p>
     <p>Black, as we shall prove, has no moves that do not lose the Rook or expose him to mate.</p>
     <p>If he moves the King:</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Ka6    4 Qa8+, Ra7 5 Qb8, and Black will shortly be mated, e.g. with 5 ...  .Ka5 6 Qb5#.</span>
-                        </div>
-    
+    <p>A] <i>3</i> ... Ka6    <i>4</i> Qa8+, Ra7 <i>5</i> Qb8, and Black will shortly be mated, e.g. with <i>5</i> ...  .Ka5 <i>6</i> Qb5#.</p>
     <p>If he moves the Rook along the file: </p>
     <p>A]    <i>3</i> ... Rb8 <i>4</i> Qa5#</p>
-    <p>B]    <i>3</i> ... Rb6+ <i>4</i> Qxb6+, and</p>
-    <p>mates next move with Qb7#</p>
+    <p>B]    <i>3</i> ... Rb6+ <i>4</i> Qxb6+, and mates next move with Qb7#</p>
     <p>C]     <i>3</i> ...  Rb5 <i>4</i> Kxb5</p>
     <p>D]    <i>3</i> ...  Rb4   <i>4</i> Qa5+, winning the Rook</p>
     <p>E]     <i>3</i> ... Rb3 <i>4</i> Qd4+, Kb8 (on <i>4</i> ... Ka8 <i>5</i> Qa4+ wins the Rook) <i>5</i> Qf4+, Ka8 (on 5...   Kc8 <i>6</i> Qf8#) <i>6</i> Qa4+, and White wins the Rook</p>
@@ -26023,41 +26023,11 @@ const texts = {
                         </div>
     
     <p>This is what happens on other Black defenses:</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Qd3+ 4 Kf2+, Kh2 5 Qg2#</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Qf1+ 4 Kg3+, Kg1 5 Qa7+, Kh1 6 Qh7+, Kg1 7 Qh2#</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Qh4 4 Qa1+, Kh2 5 Qb2+, Kg1 6 Qg2#</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>.</span>
-                            <span class='notationBlackMove'>.. Qc2 4 Kg3+, Kg1 5 Qa1+, and mate next after taking the Queen.</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Kg1 4 Qa7+, Kh1 5 Qh7+, Kg1 6 Qg6+, Kf1 (or 6 ... Kh2 7 Qg2#) 7 Qb1+, Qc1 8 Qxc1#</span>
-                        </div>
-    
+    <p>A] <i>3</i> ... Qd3+ <i>4</i> Kf2+, Kh2 <i>5</i> Qg2#</p>
+    <p>B] <i>3</i> ... Qf1+ <i>4</i> Kg3+, Kg1 <i>5</i> Qa7+, Kh1 <i>6</i> Qh7+, Kg1 <i>7</i> Qh2#</p>
+    <p>C] <i>3</i> ... Qh4 <i>4</i> Qa1+, Kh2 <i>5</i> Qb2+, Kg1 <i>6</i> Qg2#</p>
+    <p>D] <i>3</i> . .. Qc2 <i>4</i> Kg3+, Kg1 <i>5</i> Qa1+, and mate next after taking the Queen.</p>
+    <p>E] <i>3</i> ... Kg1 <i>4</i> Qa7+, Kh1 <i>5</i> Qh7+, Kg1 <i>6</i> Qg6+, Kf1 (or <i>6</i> ... Kh2 <i>7</i> Qg2#) <i>7</i> Qb1+, Qc1 <i>8</i> Qxc1#</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>4</i>
@@ -26268,27 +26238,9 @@ const texts = {
                         </div>
     
     <p>The Queen stays on the long diagonal to maintain the pin. There are other squares on this diagonal which the Queen could have chosen with the following results:</p>
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Qd5 2 Qa4+, Kb6   3 Qb3+!, Qxb3 4 b8=Q+, and      White wins the Queen</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Qg3 2 Qa4+, Kb6 3  Qb3+, Qxb3 4 b8=Q+, and   White wins the Queen</span>
-                        </div>
-    
-    
-                        <div class='notationLine'>
-                            <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>. . .</span>
-                            <span class='notationBlackMove'>Qg2 2 Qa3+, Kb6 t3 (or b5) 3 Qb2+, Qxb2 4 b8=Q+ and White wins</span>
-                        </div>
-    
+    <p>A] <i>1</i> ... Qd5 <i>2</i> Qa4+, Kb6   <i>3</i> Qb3+!, Qxb3 <i>4</i> b8=Q+, and      White wins the Queen</p>
+    <p>B] <i>1</i> ... Qg3 <i>2</i> Qa4+, Kb6 <i>3</i>  Qb3+, Qxb3 <i>4</i> b8=Q+, and   White wins the Queen</p>
+    <p>C] <i>1</i> ... Qg2 <i>2</i> Qa3+, Kb6 t3 (or b5) <i>3</i> Qb2+, Qxb2 <i>4</i> b8=Q+ and White wins</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>2</i>
