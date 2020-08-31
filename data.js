@@ -1,5 +1,6 @@
 const firstColumnExceptions = {
     '2': 34,
+    '32': 68,
     '44': 60,
     '50': 25,
     '58': 80,
@@ -9686,7 +9687,186 @@ const texts = {
                             <span class='notationBlackMove'></span>
                         </div>
                         `,
-    '32': ``,
+    '32': `<p>WHITE has two ways of winning. One is to sacrifice the passed Pawn, get the opposition, capture Black's Pawn and march the Queen Pawn through. This is how it's done:</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>1</i>
+                            <span class='notationWhiteMove'>f6+</span>
+                            <span class='notationBlackMove'>Kf8!</span>
+                        </div>
+    
+    <p>Better than <i>1</i> ... Kf7 <i>2</i> Kf5, Kf8 <i>3</i> Ke7 and it's all over.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>f7!</span>
+                            <span class='notationBlackMove'>Kxf7</span>
+                        </div>
+    
+    <p>If he refuses the Pawn by <i>2</i> ... Ke7, then <i>3</i> f8=Q+ forces <i>3</i> ... Kxf8 when <i>4</i> Kf6, Ke8 <i>5</i> Ke6, Kd8 <i>6</i> Kxd6, Ke8 <i>7</i> Kc7 wins.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>Kf5</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>4</i>
+                            <span class='notationWhiteMove'>Kg6</span>
+                            <span class='notationBlackMove'>Kd8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>5</i>
+                            <span class='notationWhiteMove'>Kf6</span>
+                            <span class='notationBlackMove'>Kd7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>6</i>
+                            <span class='notationWhiteMove'>Kf7</span>
+                            <span class='notationBlackMove'>Kd8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>7</i>
+                            <span class='notationWhiteMove'>Ke6</span>
+                            <span class='notationBlackMove'>Kc7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>8</i>
+                            <span class='notationWhiteMove'>Ke7</span>
+                            <span class='notationBlackMove'>Kc8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>9</i>
+                            <span class='notationWhiteMove'>Kxd6</span>
+                            <span class='notationBlackMove'>Kd8</span>
+                        </div>
+    
+    <p>This wins for White no matter whose move it is. If it were Black's move, he would have to allow White's King to penetrate at his e7 or c7. Since it is White's move now, he can advance the Pawn to the seventh rank without checking and win.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>10</i>
+                            <span class='notationWhiteMove'>Kc6</span>
+                            <span class='notationBlackMove'>Kc8</span>
+                        </div>
+    
+    <p>Or <i>10</i> ... Ke7 <i>11</i> Kf7 and the Pawn has a clear road.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>11</i>
+                            <span class='notationWhiteMove'>d6</span>
+                            <span class='notationBlackMove'>Kd8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>12</i>
+                            <span class='notationWhiteMove'>d7</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>13</i>
+                            <span class='notationWhiteMove'>Kc7</span>
+                            <span class='notationBlackMove'>and wins</span>
+                        </div>
+    
+    <p>The second method is by triangulation:</p>
+    <p>If <i>1</i> ... Kf7 <i>2</i> Kf5, Kf8 followed by <i>3</i> Ke6 is immediately decisive.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>Kf4!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Not at once <i>2</i> Kf5 as after <i>2</i> ... Kf7 White must return to g5.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kg8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>Kg4!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>If <i>1</i> ... Kf7 <i>2</i> Kf5, Kf8 followed by <i>3</i> Ke6 is immediately decisive.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>Kf4!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Not at once <i>2</i> Kf5 as after <i>2</i> ... Kf7 White must return to g5.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kg8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>Kg4!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>White's King circles about, avoiding the square f5 except in reply to  ... Kf7.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kf8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>4</i>
+                            <span class='notationWhiteMove'>Kg5</span>
+                            <span class='notationBlackMove'>Kg8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>5</i>
+                            <span class='notationWhiteMove'>Kg6</span>
+                            <span class='notationBlackMove'>Kf8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>6</i>
+                            <span class='notationWhiteMove'>f7</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>7</i>
+                            <span class='notationWhiteMove'>Kg7</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>White wins</p>`,
     '33': `<p>THE key to the win is for White to give up his passed Pawn, force his way to d6, capture Black's Pawn and then promote the remaining Pawn.</p>
     
                         <div class='notationLine'>
@@ -27509,148 +27689,148 @@ const texts = {
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>1</i>
-                            <span class='notationWhiteMove'>B-K3ch</span>
-                            <span class='notationBlackMove'>K-Kt8</span>
+                            <span class='notationWhiteMove'>Be3+</span>
+                            <span class='notationBlackMove'>Kb1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>2</i>
-                            <span class='notationWhiteMove'>B-R6</span>
-                            <span class='notationBlackMove'>P-Kt4</span>
+                            <span class='notationWhiteMove'>Bh6</span>
+                            <span class='notationBlackMove'>b5</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>3</i>
-                            <span class='notationWhiteMove'>K-K7</span>
-                            <span class='notationBlackMove'>P-Kt5</span>
+                            <span class='notationWhiteMove'>Ke7</span>
+                            <span class='notationBlackMove'>b4</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>4</i>
-                            <span class='notationWhiteMove'>K-B6</span>
-                            <span class='notationBlackMove'>P-Kt4</span>
+                            <span class='notationWhiteMove'>Kf6</span>
+                            <span class='notationBlackMove'>b5</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>5</i>
-                            <span class='notationWhiteMove'>K-Kt5</span>
-                            <span class='notationBlackMove'>K-B8</span>
+                            <span class='notationWhiteMove'>Kg5</span>
+                            <span class='notationBlackMove'>Kc1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>6</i>
-                            <span class='notationWhiteMove'>K-B5dis.ch</span>
-                            <span class='notationBlackMove'>K-Kt8</span>
+                            <span class='notationWhiteMove'>Kf5+</span>
+                            <span class='notationBlackMove'>Kb1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>7</i>
-                            <span class='notationWhiteMove'>K-B4</span>
-                            <span class='notationBlackMove'>K-B8</span>
+                            <span class='notationWhiteMove'>Kf4</span>
+                            <span class='notationBlackMove'>Kc1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>8</i>
-                            <span class='notationWhiteMove'>K-B3dis.ch</span>
-                            <span class='notationBlackMove'>K-Kt8</span>
+                            <span class='notationWhiteMove'>Kf3+</span>
+                            <span class='notationBlackMove'>Kb1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>9</i>
-                            <span class='notationWhiteMove'>K-K3</span>
-                            <span class='notationBlackMove'>K-B8</span>
+                            <span class='notationWhiteMove'>Ke3</span>
+                            <span class='notationBlackMove'>Kc1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>10</i>
-                            <span class='notationWhiteMove'>K-K2dis.ch</span>
-                            <span class='notationBlackMove'>K-Kt8</span>
+                            <span class='notationWhiteMove'>Ke2+</span>
+                            <span class='notationBlackMove'>Kb1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>11</i>
-                            <span class='notationWhiteMove'>B-Q2</span>
-                            <span class='notationBlackMove'>P-R4</span>
+                            <span class='notationWhiteMove'>Bd2</span>
+                            <span class='notationBlackMove'>h5</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>12</i>
-                            <span class='notationWhiteMove'>K-Q1</span>
-                            <span class='notationBlackMove'>P-R5</span>
+                            <span class='notationWhiteMove'>Kd1</span>
+                            <span class='notationBlackMove'>h4</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>13</i>
-                            <span class='notationWhiteMove'>BxP</span>
-                            <span class='notationBlackMove'>P-R6</span>
+                            <span class='notationWhiteMove'>Bxb4</span>
+                            <span class='notationBlackMove'>h3</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>14</i>
-                            <span class='notationWhiteMove'>B-Q5</span>
-                            <span class='notationBlackMove'>P-R7</span>
+                            <span class='notationWhiteMove'>Bd5</span>
+                            <span class='notationBlackMove'>h2</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>15</i>
-                            <span class='notationWhiteMove'>K-Q2</span>
-                            <span class='notationBlackMove'>P-R8(Q)</span>
+                            <span class='notationWhiteMove'>Kd2</span>
+                            <span class='notationBlackMove'>h1=Q</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>16</i>
-                            <span class='notationWhiteMove'>BxQ</span>
-                            <span class='notationBlackMove'>K-R7</span>
+                            <span class='notationWhiteMove'>Bxh1</span>
+                            <span class='notationBlackMove'>Ka2</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>17</i>
-                            <span class='notationWhiteMove'>B-Q5ch</span>
-                            <span class='notationBlackMove'>K-Kt8</span>
+                            <span class='notationWhiteMove'>Bd5+</span>
+                            <span class='notationBlackMove'>Kb1</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>18</i>
-                            <span class='notationWhiteMove'>B-R3</span>
-                            <span class='notationBlackMove'>P-Kt5</span>
+                            <span class='notationWhiteMove'>Ba3</span>
+                            <span class='notationBlackMove'>b4</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>19</i>
-                            <span class='notationWhiteMove'>B-Kt3</span>
-                            <span class='notationBlackMove'>PxB</span>
+                            <span class='notationWhiteMove'>Bb3</span>
+                            <span class='notationBlackMove'>bxa3</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>20</i>
-                            <span class='notationWhiteMove'>B-Kt8</span>
-                            <span class='notationBlackMove'>P-R7</span>
+                            <span class='notationWhiteMove'>Bg8</span>
+                            <span class='notationBlackMove'>a2</span>
                         </div>
     
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>21</i>
-                            <span class='notationWhiteMove'>B-R7</span>
-                            <span class='notationBlackMove'>mate</span>
+                            <span class='notationWhiteMove'>Bh7#</span>
+                            <span class='notationBlackMove'></span>
                         </div>
                         `,
     '276': `
