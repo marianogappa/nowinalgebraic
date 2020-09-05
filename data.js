@@ -2683,7 +2683,7 @@ const games = {
     ],
     "2": [
         {
-            actions: "1. Kf5! Ke3 \n2. Ke5! Kd3 \n3. Kd5! Kc3?? \n4. Kc5! Kd3 \n5. a4 Kc3 \n6. a5 Kb3 \n7. a6 Ka4 \n8. a7 Ka5 \n9. a8=Q# ",
+            actions: "1. Kf5! Ke3 \n2. Ke5! Kd3 \n3. Kd5! Kc3 \n4. Kc5! Kd3?? \n5. a4 Kc3 \n6. a5 Kb3 \n7. a6 Ka4 \n8. a7 Ka5 \n9. a8=Q# ",
             initialBoard: "8/8/8/6K1/8/5k2/P7/8 w - - 0 1"
         },
         {
@@ -10955,7 +10955,193 @@ const texts = {
                         </div>
     
     <p>White wins</p>`,
-    '46': ``,
+    '46': `
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>1</i>
+                            <span class='notationWhiteMove'>Kc6</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>Kd5</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>THE first step. White prevents <i>2</i> ... f6, after which the play would be <i>3</i> e6, Ke8 (on <i>3</i> ...  f5 <i>4</i>  Ke5 wins the Pawn) <i>4</i> Kd6, Kd8 <i>5</i> e7+, Ke8 <i>6</i> g4, Kf7 <i>7</i> Kd7 and White wins. </p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>2</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kd7 </span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>Kd4!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Not at once <i>3</i> Ke4 as after <i>3</i> ... Ke6 <i>4</i> Kf4, f6 <i>5</i> exf6, Kxf6 <i>6</i> Kg4, Kg6, Black has the opposition and draws.</p>
+    <p>White is triangulating in order to move his King to e4 after Black plays ... Ke6.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>3</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>4</i>
+                            <span class='notationWhiteMove'>Ke3</span>
+                            <span class='notationBlackMove'>Kd7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>5</i>
+                            <span class='notationWhiteMove'>Kf4</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Threatening to invade at f5.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>5</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Ke6</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>6</i>
+                            <span class='notationWhiteMove'>Ke4</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>This is the position White was angling for: his King at e4, Black's at e6—with Black to move.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>6</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kd7</span>
+                        </div>
+    
+    <p>This time if <i>6</i> ... f6 <i>7</i> exf6, Kxf6 <i>8</i> Kf4, Kg6 <i>9</i> Kg4 (White has the opposition) Kf6 <i>10</i> Kh5 and wins.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>7</i>
+                            <span class='notationWhiteMove'>Kf5</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>8</i>
+                            <span class='notationWhiteMove'>g4</span>
+                            <span class='notationBlackMove'>Ke8!</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>9</i>
+                            <span class='notationWhiteMove'>Kf6!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>White does not fall for the attractive <i>9</i> e6 after which <i>9</i> ... Ke7 <i>10</i> exf7, Kxf7 <i>11</i> Kg5, Kg7 gives Black the opposition and a draw.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>9</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Kf8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>10</i>
+                            <span class='notationWhiteMove'>g5</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Here too <i>10</i> e6 is premature, as the continuation 10... fxe6 <i>11</i> Kxe6, Kg7 <i>12</i> Kf5, Kf7 lets Black draw easily.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>10</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Ke8</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>11</i>
+                            <span class='notationWhiteMove'>Kg7!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>Last chance for White to misplay it! If <i>11</i> e6, Kf8 <i>12</i> e7+, Ke8 and White must concede the draw.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>11</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>Ke7</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>12</i>
+                            <span class='notationWhiteMove'>Kg8</span>
+                            <span class='notationBlackMove'>Ke8</span>
+                        </div>
+    
+    <p>If <i>12</i> ... Ke6 <i>13</i> Kf8, Kxe5 <i>14</i> Kxf7 and White wins.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>13</i>
+                            <span class='notationWhiteMove'>e6!</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>The point of the King's tour from b7 away over to g8.</p>
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>13</i>
+                            <span class='notationWhiteMove'>. . .</span>
+                            <span class='notationBlackMove'>fxe6</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>14</i>
+                            <span class='notationWhiteMove'>g6</span>
+                            <span class='notationBlackMove'>e5</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>15</i>
+                            <span class='notationWhiteMove'>g7</span>
+                            <span class='notationBlackMove'>e4</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>16</i>
+                            <span class='notationWhiteMove'>Kh7</span>
+                            <span class='notationBlackMove'>e3</span>
+                        </div>
+    
+    
+                        <div class='notationLine'>
+                            <i class='notationMoveNumber'>17</i>
+                            <span class='notationWhiteMove'>g8=Q+</span>
+                            <span class='notationBlackMove'></span>
+                        </div>
+    
+    <p>White wins. An exquisite ending even for Grigoriev, who created so many masterpieces of beautifully-timed play.</p>`,
     '47': `<p>IT IS clear that White must capture the Knight Pawn in order to win. But how does he do so? The obvious <i>1</i> Kg4, Kh2 <i>2</i> Kg5, Kg3 <i>3</i> Kg6, Kxf4 leads to a draw.</p>
     
                         <div class='notationLine'>
