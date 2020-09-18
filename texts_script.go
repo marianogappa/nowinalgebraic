@@ -1209,7 +1209,7 @@ On 2 ... Kc6 White plays 3 Ke5 and after the reply 3 ... Kb6 can move 4 Kd5, for
 6 b5        Kg3
 7 b6        h4
 8 b7        h3
-9 b8= Q+        Kg2
+9 b8=Q+        Kg2
 10 Qg8+        Kf2
 11 Qd5
 Threatens to continue with 12 Qh8.
@@ -1828,7 +1828,7 @@ White wins. He captures the imprisoned Bishop and then Queens his Rook Pawn.
 ###101
 1 c7        Rd6+
 2 Kb5
-EVERY move of White's must be timed right. For instance, if 2 Kb7, Rd7 followed by capturing the pinned Pawn draws, or if 2 Kc5, Rd1 followed by 3 ... Rc1+ with a Pawn skewer capture, does likewise.
+EVERY move of White's must be timed right. For instance, if 2 Kb7, Rd7 followed by capturing the pinned Pawn draws, or if 2 Kc5, Rd1 followed by 3 ... Rc1+ with a Pawn skewer capture, also with a draw.
 2 ...        Rd5+
 3 Kb4        Rd4+
 4 Kb3        Rd3+
@@ -2568,7 +2568,7 @@ Moving in front of the Pawn, even though it blocks the Pawn for the time being, 
 3 ...        Bd2
 The second step:
 4 Bc5        Bh6
-Ousted from one diagonal, the Bishop seizes another, also leading to f8*.
+Ousted from one diagonal, the Bishop seizes another, also leading to f8.
 5 Bd4
 Prevents Black from playing 5 ... Bg7.
 5 ...        Kf5
@@ -3444,7 +3444,7 @@ Taking care to avoid 6 Rc6+, Kd5 7 Kb7 (intending to play 8 Ra6 next move) as 7 
 9 Rg4+         Kc3
 10 Kb6        Rb2+
 
-Otherwise, White will continue with 11 Ka5, Ra2 12 Ra4, Rb2, followed by 12 a8=Q, White wins.
+Otherwise, White will continue with 10 Rg8, Ra2+ 11 a8=Q.
 
 11 Kc5        Ra2
 12 Rg3+        Kc2
@@ -3661,7 +3661,7 @@ THE King, who is in check, must find a means of evading the persistent. checks b
 On 1 ... Ra8 2 Rg1+, Kh7 3 Kf7, threatening mate as well as Queening the Pawn, wins for White.
 2 Ke5+!
 
-But not 2 Kf5, Kf7 3 Re1, Ra1 4 Re2, Re1, 5 e8=Q+ and White Queens and wins.
+But not 2 Kf5, Kf7 3 Re1, Ra1 4 Re2, Ra8, and White cannot save the Pawn.
 2 ...         Ra5+
 3 Kf6        Ra6+
 4 Kg5        Ra5+
@@ -4013,7 +4013,7 @@ There is no comfort in 5 ... Kc3 6 Re3+, Kd4 7 Rg3, and White wins.
 6 Re5+!        Rxe5
 What else is there? If 6 ... fxe5 7 Kxg5 wins, or if 6 ... Kd6 7 Rxg5, fxg5+ 8 Kxg5, and the game is over.
 7 g8=Q
-White wins
+White wins.
 ###234
 WHITE is two Pawns behind, but his King and Rook are strongly placed. Black has two passed Pawns, but his King is confined to a corner, and faces great dangers.
 
@@ -4236,22 +4236,10 @@ White's winning chance in this and similar positions lies in his King being near
 
 1 Kf4
 Now Black's little trick of abandoning the Pawn does not work, as after 1 ... Kh1 2 Qe2 (for Heaven's sake, not 2 Kg3??, allowing 2 ... f1=N+, and Black wins the Queen) Kg2 3 Kg4, Kg1 (if 3 ... Kh1 4 Qf1+, Kh2 5 Qxf2+) 4 Kg3, f1=Q 5 Qh2#.
-1 . .  .        f1=Q+
+1 ...        f1=Q+
 2 Kg3
 The threat is 3 Qh2#. If Black's Queen moves (say to f4) to give the King room, then 3 Qg2#.
 White wins
-###245
-1 Qb3
-WHITE'S purpose is not only to pin the Pawn, but to prevent Black from reaching a1 with his King, in a try for stalemate.
-1.  .  .    Kd2
-2 Qb2    Kd1
-3 Kf3!    Kd2
-The response to Queening the Pawn (and it would come like a flash) would be 3 ... c1=Q 4 Qe2#.
-4 Kf2    Kd1
-Clearly, on 4 ... Kd3 5 Ke1 forces Black to give up his Pawn.
-5 Qd4+        Kc1
-6 Qb4        Kd1
-7 Qe1#
 ###246
 1 Qf5
 PINS the Pawn, and cuts down the choice of reasonable reply to two moves by the King.
@@ -4263,7 +4251,7 @@ Or 2 ... c1=N+ 3 Ka3, Nd3 4 Qf1+ (side-stepping 4 Qxd3, stalemate) and mate next
 4 Qa2#
 ###247
 1 Qb7+        Ka1
-BLACK threatens to stalemate himself. White can win this type of position only if his King is near enough   to create a mating situation.
+BLACK threatens to stalemate himself. White can win this type of position only if his King is near enough to create a mating situation.
 2 Qe4        Kb2
 3 Qd4+        Kb1
 Or 3 ... Kb3 4 Kd3, Ka3    5 Kc4, and Black will be mated next move.
@@ -4271,7 +4259,7 @@ Or 3 ... Kb3 4 Kd3, Ka3    5 Kc4, and Black will be mated next move.
 5 Qd2+        Kb1
 Or 5 ... Ka1 6 Qcl#.
 6 Kd1!        a1=Q
-If 6 ... a1=N 7 Qb4+, Ka2 8 Kd2, Nb3+ 9 Kc3, Ka1 (a Knight move instead allows 9 Kc2, Ka1 10 Qa3#) 10 Kxb3 (definitely not 10 Qxb3) Kb1 11 Qe1#.
+If 6 ... a1=N 7 Qb4+, Ka2 8 Kd2, Nb3+ 9 Kc3, Ka1 (a Knight move instead allows 10 Qb2#) 10 Kxb3 (definitely not 10 Qxb3) Kb1 11 Qe1#.
 7 Qc2#
 ###248
 WHITE wins because his King is close enough to assist in a mating operation. Were his King to stand on d6 instead, there could be no win.
@@ -4372,7 +4360,7 @@ This is what happens on other Black defenses:
 A] 3 ... Qd3+ 4 Kf2+, Kh2 5 Qg2#
 B] 3 ... Qf1+ 4 Kg3+, Kg1 5 Qa7+, Kh1 6 Qh7+, Kg1 7 Qh2#
 C] 3 ... Qh4 4 Qa1+, Kh2 5 Qb2+, Kg1 6 Qg2#
-D] 3 . .. Qc2 4 Kg3+, Kg1 5 Qa1+, and mate next after taking the Queen.
+D] 3 ... Qc2 4 Kg3+, Kg1 5 Qa1+, and mate next after taking the Queen.
 E] 3 ... Kg1 4 Qa7+, Kh1 5 Qh7+, Kg1 6 Qg6+, Kf1 (or 6 ... Kh2 7 Qg2#) 7 Qb1+, Qc1 8 Qxc1#
 4 Qh8+        Kg1
 5 Qg7+        Kf1
@@ -4651,7 +4639,6 @@ Quick disaster follows 2 ... Kd3 when 3 Qe2+, Kc3 4 Qc2 mates the King.
 3 Qb3+        Kc6
 The alternative is 3... Ka5  when 4 Qb4+, Ka6 5 Qa4+, Kb7 6 Qb5+, Ka8 (or Kc8) 7 Qa6+, Kb8 8 Qa7+, Kc8 9 Qa8#.
 4 Be7!        Qxe7
-Other moves by the Queen allows White to mate by 5 d5.
 5 d5+        Kd6
 6 Qb4+        c5
 7 dxc6 e.p.+    Ke6
@@ -4761,15 +4748,15 @@ A BEAUTIFUL ending! White toys with his opponent (even forcing him to Queen a Pa
 20 Bg8  a2
 21 Bh7#
 ###276
-1 e7		Rh8
+1 e7        Rh8
 THE Pawn cannot be stopped by 1 ... Re5, as 2 Nc4+ wins the Rook.
 2 Ne6
 Intending 3 Nf8 next, cutting off the Rook.
-2 ...		Re8
+2 ...        Re8
 If 2 ... Rc8, White does not play 3 Nd8 as 3 ... Rc3+ 4 Kb2, Rxe3 draws, but 3 Nc4+, Ka6 4 Nd8, which wins.
 3 Nc7!
 The move that does the trick. White must not be seduced by the attractive 3 Nc4+, Kb5 4 Nd6+!, Kc6 5 Nxe8, when Kd7, followed by  6 ... Kxe7 allows a draw (the two Knights alone being unable to force mate) nor by 3 Nc4+, Kb5 4 Nc7+, Kc6 5 Nxe8, Kd7, and again Black draws by capturing the Pawn.
-3 ...		Rxe7
+3 ...        Rxe7
 4 Nc4#!
 ###277
 GIVEN a chance, the Bishops can swoop down the diagonals, and come up with a Queen in their clutches.
@@ -4816,19 +4803,19 @@ But White has a last trump:
 11 fxg8=Q+	Bxg8
 12 Ng6#!
 ###279
-WHITE seems to have a weak and somewhat scattered little army with which to put up a successful fight against the powerful Queen, but we shall see... .
-1 Nb6+		Kc7
+WHITE seems to have a weak and somewhat scattered little army with which to put up a successful fight against the powerful Queen, but we shall see...
+1 Nb6+        Kc7
 If 1 ... Kd8 instead, 2 Bg5, Qxg5 3 f8=Q+, Kc7 4 Qc8+, Kxb6 (or 4... Kd6 5 Qc5+, Ke5 6 d6+, Kf6 7 Qxg5+ wins) 5 Qc5+, Ka6 6 Qa5#.
 2 f8=Q!
 The tempting 2 d6+ fails after 2 ... Qxd6 (not 2... Kxd6 3 Bc5+ and White wins both Queen and game.) 3 Bc5 (expecting 3... Qxc5 4 Nd5+) Kd8! 4 Bxd6, and Black draws by stalemate.
-2 ...		Qxf8
-3 d6+		Kc6
+2 ...        Qxf8
+3 d6+        Kc6
 Other possibilities are:
 A] 3 ... Qxd6 4 Bf4, Qxf4 5 Nd5+, and White wins Queen.
 B] 3 ... Kb8 4 Nd7+, and White wins the Queen
 C] 3 ... Kd8 4 Bg5+, Ke8 5 d7+, Kf7 6 d8=Q, and White has a winning advantage.
-4 b5+		Kxd6
-5 Bc5+		Kxc5
+4 b5+        Kxd6
+5 Bc5+        Kxc5
 6 Nd7+
 White wins the Queen and the game.
 ###280
@@ -5027,17 +5014,18 @@ Or 4 ... Qxd4 5 Nc6+, attacking King and Queen.
 White wins the Queen and the game.
 ###293
 DESPITE her great mobility, the Queen is caught and subdued by the Knight and Rook working together in perfect harmony.
-1 Rc8	            Qa3
+1 Rc8                Qa3
 If 1 ... Qxc8 (or 1... Qf7) 2 Nd6+ wins the Queen.
-2 Nd4+	Kb6
-3 Rb8+	Kc5
+2 Nd4+    Kb6
+3 Rb8+    Kc5
+
 The alternatives 3 ... Kc7 or 3 ... Ka7 let King and Queen fall into the Knight's clutches by 4 Nb5+.
-4 Rb5+		Kd6
-5 Rd5+		Ke7
+4 Rb5+        Kd6
+5 Rd5+        Ke7
 Here too 5 ... Kc7 is met by 6 Nb5+.
 6 Ra5!
 Shifting the attack to the Queen.
-6 ...		Qxa5
+6 ...        Qxa5
 It is either this, or 6... Qd6 when 7 Nf5+, or.
 7 Nc6+
 In both cases White wins the Queen and the game.
@@ -5057,22 +5045,23 @@ Definitely not 5 d8=Q, when Black wins by 5 ... Qb1+ 6 Kh8, Qh1#.
 White wins
 ###295
 CHESS can never fail to be exciting as long as the lesser force outwits the greater.
-1 Rh5+		Ke6!
+1 Rh5+        Ke6!
 Best, as 1 . . f5 allows the brutal continuation 2 Rxf5+, Qxf5 3 Bxf5, Kxf5, and White wins an easy Pawn ending, while 1 ... Kd4 2 e3+ is of course unthinkable.
-2 Bb3+		d5
+2 Bb3+        d5
 3 Rxd5
 Threatens to discover check, and win the Queen. If for example, Black plays 3 ... Qxb4 4 Rxb5 wins for White.
-3 ...		Qxf2
+3 ...        Qxf2
 To which White cannot reply 4 Rf5+, as Black simply captures by 4 ... Kxf5.
 4 d4!
-Now the idea is to continue with    5 Re5+, Kd6 6 Re6#. However, 4 ... Qxe2 would negate that possibility.
-4 ... 		f5
+Now the idea is to continue with 5 Re5+, Kd6 6 Re6#. 
+
+4 ...         f5
 Clears a flight square for the King at f6.
-5 e4		Qxb2
+5 e4        Qxb2
 If instead 5 ... fxe4 6 Rd8+, Kf6 (or Kf5) 7 Rf8+ and White wins the Queen.
 Despite the fact that Black's Queen is out of danger (even to the point that she threatens the Bishop) White engineers a sparkling finale.
-6 Rd6+!		Kxd6
-7 e5+		Kc6
+6 Rd6+!        Kxd6
+7 e5+        Kc6
 8 d5#!
 ###296
 ONE'S first impression is that White should be happy to draw against two such menacing Pawns on the seventh. But White has a win, and a pretty one it is.
