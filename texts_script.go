@@ -4911,12 +4911,12 @@ White wins the Rook and game.
 WHITE wins a piece, but is forced to return it. Left with Rook against Bishop, a draw seems the likely result, but the weapon of "Domination" subdues the Bishop.
 1 Rb1+!
 Forces Black into a pin which costs a piece.
-1 ...		Kd2
-2 Rb2		Kc1
-3 Rxc2+		Kb1
-4 Rc4!		Bf2+
-If at once 4 ... KxKt 5 R-R4ch wins the Bishop.
-5 Kg4		Kxa1
+1 ...        Kd2
+2 Rb2        Kc1
+3 Rxc2+        Kb1
+4 Rc4!        Bf2+
+If at once 4 ... Kxa1 5 Ra4+ wins the Bishop.
+5 Kg4        Kxa1
 6 Kf3!
 The Bishop now has no moves! The proof:
 A] 6 ... Bh4 7 Rxh4
@@ -4925,10 +4925,9 @@ C] 6 ...  Be1 7 Rc1+
 D] 6 ...  Bg1 7 Rc1+
 E] 6 ... Be3 7 Kxe3
 F] 6 ... Bd4 7 Rxd4
-G] 6 ...  Bc5 7 Rxc5
+G] 6 ... Bc5 7 Rxc5
 H] 6 ... Bb6 7 Ra4+, Kb2 8 Rb4+
-I] 6 ... Ba7 7 Ra4+
-White wins, by Domination!
+I] 6 ... Ba7 7 Ra4+ White wins, by Domination!
 ###286
 JUST when Black congratulates himself on having rescued his imperiled Knights, disaster strikes!
 1 Re3+		Kd4

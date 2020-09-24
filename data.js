@@ -28644,7 +28644,7 @@ const texts = {
                             <span class='notationBlackMove'>Bf2+</span>
                         </div>
     
-    <p>If at once <i>4</i> ... KxKt <i>5</i> R-R4ch wins the Bishop.</p>
+    <p>If at once <i>4</i> ... Kxa1 <i>5</i> Ra4+ wins the Bishop.</p>
     
                         <div class='notationLine'>
                             <i class='notationMoveNumber'>5</i>
